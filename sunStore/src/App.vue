@@ -11,5 +11,6 @@ body{
   margin: 0;
   padding: 0;
   background: #FFFDEF;
+  font-family: 'Montserrat Alternates';
 }
 </style>
