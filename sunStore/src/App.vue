@@ -12,5 +12,8 @@ body{
   padding: 0;
   background: #FFFDEF;
   font-family: 'Montserrat Alternates';
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 </style>
