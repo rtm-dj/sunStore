@@ -116,19 +116,19 @@ export default {
   font-family: 'Montserrat Alternates';
   border: none;
   color: #262B2D;
-  font-size: 20px;
+  border: 1px solid transparent;
+  font-size: 14px;
   width: 2vw;
   aspect-ratio: 1;
   border-radius: 1vw;
+  margin-right: 20px;
   transition: all .2s ease;
-  margin-right: 30px;
 }
 .lang:hover{
-  width: 2vw;
-  aspect-ratio: 1;
   cursor: pointer;
-  border-radius: 1vw;
   border: 1px solid #262B2D;
+  accent-color: none;
+  box-sizing: border-box;
 }
 .copyright{
   color: #262B2D;
