@@ -1,31 +1,49 @@
 <template>
-  <div class="content">
-    <div class="left-part">
-      <div class="language">
-        <button class="lang">en</button>
-      </div>
-      <img src="../assets/logo.png" alt="" class="logotype">
-      <div class="bottom-action">
-        <span class="copyright">2024 © кладовая солнца</span>
-        <button class="buy">Купить</button>
-      </div>
-    </div>
-    <div class="right-part">
-      <img src="../assets/curvedText_1.svg" alt="" class="curvedText">
-      <div class="scrolldown">
-        <div class="icon-container">
-          <img class="icon" src="../assets/scroll.svg" alt="">
+  <div class="page">
+    <section class="banner">
+      <div class="left-part">
+        <div class="language">
+          <button class="lang">en</button>
         </div>
-        <p class="scroll-text">Листай</p>
+        <img src="../assets/logo.png" alt="" class="logotype">
+        <div class="bottom-action">
+          <span class="copyright">2024 © кладовая солнца</span>
+          <button class="buy">Купить</button>
+        </div>
       </div>
-      <div class="text-header">
-        <h1>быстро снимает воспаление, отёк, зуд и раздражение.</h1>
-        <img src="../assets/blob1.svg" alt="" class="blob">
-      </div>
+      <div class="right-part">
+        <img src="../assets/curvedText_1.svg" alt="" class="curvedText">
+        <div class="scrolldown">
+          <div class="icon-container">
+            <img class="icon" src="../assets/scroll.svg" alt="">
+          </div>
+          <p class="scroll-text">Листай</p>
+        </div>
+        <div class="text-header">
+          <h1>быстро снимает воспаление, отёк, зуд и раздражение.</h1>
+          <img src="../assets/blob1.svg" alt="" class="blob">
+        </div>
 
+        
+      </div>
+    </section>
+
+    <section class="components">
+      <div class="title">
+        <div class="title-circle"></div>
+        <p class="title">компоненты</p>
+      </div>
       
-    </div>
+      <div class="components-left-part">
+        <img src="../assets/components1.svg" alt="">
+        <p class="subtitle"></p>
+      </div>
+      <div class="components-right-part">
+        <h1>уменьшает зуд и раздражение, снижает отечность</h1>
+      </div>
+    </section>
   </div>
+  
 </template>
 
 <script>
@@ -35,6 +53,9 @@ export default {
 </script>
 
 <style scoped>
+.page{
+  overflow-y: scroll;
+}
 .icon-container{
   border: solid 1px #262B2D;
   border-radius: 50%;
@@ -103,8 +124,17 @@ export default {
 .right-part{
   width: 100%;
 }
-.content{
+.banner{
   display: flex;
+  position: relative;
+  height: 100vh;
+  border: 2px solid red;
+}
+.components{
+  display: flex;
+  position: relative;
+  height: fit-content;
+  border: 2px solid red;
 }
 .language{
   display: flex;
