@@ -3,58 +3,138 @@
     <section class="banner">
       <div class="left-part">
         <div class="language">
-          <button class="lang">en</button>
+          <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button>
         </div>
-        <img src="../assets/logo.png" alt="" class="logotype">
-        <div class="bottom-action">
+        <img src="../assets/logo.png" alt="" class="logotype" ref="block_first">
+        <div class="bottom-action" ref="block_third">
           <span class="copyright">2024 © кладовая солнца</span>
           <button class="buy">Купить</button>
         </div>
       </div>
       <div class="right-part">
-        <img src="../assets/curvedText_1.svg" alt="" class="curvedText">
-        <div class="scrolldown">
+        <img src="../assets/curvedText_1.svg" alt="" class="curvedText" ref="block_sixth">
+        <div class="scrolldown" ref="block_fourth">
           <div class="icon-container">
             <img class="icon" src="../assets/scroll.svg" alt="">
           </div>
           <p class="scroll-text">Листай</p>
         </div>
         <div class="text-header">
-          <h1>быстро снимает воспаление, отёк, зуд и раздражение.</h1>
-          <img src="../assets/blob1.svg" alt="" class="blob">
+          <h1 ref="block_second">быстро снимает воспаление, отёк, зуд и раздражение.</h1>
+          <img src="../assets/blob1.svg" alt="" class="blob" ref="block_fifth">
         </div>
-
-        
       </div>
     </section>
 
-    <section class="components">
-      <div class="title">
-        <div class="title-circle"></div>
-        <p class="title">компоненты</p>
-      </div>
-      
-      <div class="components-left-part">
-        <img src="../assets/components1.svg" alt="">
-        <p class="subtitle"></p>
-      </div>
-      <div class="components-right-part">
-        <h1>уменьшает зуд и раздражение, снижает отечность</h1>
-      </div>
-    </section>
   </div>
-  
 </template>
 
-<script>
-export default {
 
-}
+<script>
+import HeaderText from "../components/HeaderText.vue";
+import LabelText from "../components/LabelText.vue";
+
+export default {
+  components: { HeaderText, LabelText } ,
+  data() {
+    return {
+      language: 'ru',
+      showBanner: true, // Данные о состоянии баннера
+    };
+  },
+
+  mounted() {
+    window.addEventListener('wheel', this.handleWheel); // Привязываем обработчик
+    this.showBannerAnimation(); // Запускаем анимацию при монтировании
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('wheel', this.handleWheel); // Удаляем обработчик
+  },
+
+  methods: {
+    handleWheel(event) {
+      console.log(event.deltaY)
+      if (event.deltaY > 0) {
+        
+        this.hideBannerAnimation()
+        setTimeout(() => {
+          this.showBanner = false;
+        }, 500);
+      } else {
+        this.showBanner = true;
+        setTimeout(() => {
+          this.showBannerAnimation();
+        }, 100);
+        
+      }
+    },
+
+    showBannerAnimation() {
+      let index = 0;
+      const blocks = [
+        this.$refs.block_first,
+        this.$refs.block_second,
+        this.$refs.block_third,
+        this.$refs.block_fourth,
+        this.$refs.block_fifth,
+        this.$refs.block_sixth,
+      ];
+
+      const interval = setInterval(() => {
+        if (index < blocks.length) {
+          const block = blocks[index];
+          if (block) {
+            block.classList.add('block-show');
+          }
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 50);
+    },
+
+    hideBannerAnimation() {
+      let index = 0;
+      const blocks = [
+        this.$refs.block_first,
+        this.$refs.block_second,
+        this.$refs.block_third,
+        this.$refs.block_fourth,
+        this.$refs.block_fifth,
+        this.$refs.block_sixth,
+      ];
+
+      const interval = setInterval(() => {
+        if (index < blocks.length) {
+          const block = blocks[index];
+          if (block) {
+            block.classList.remove('block-show');
+          }
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 50);
+    },
+  },
+};
+
 </script>
 
+
 <style scoped>
-.page{
+*{
+  transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+}
+.block-show{
+    scale: 1 !important;
+    opacity: 1 !important;
+    
+}
+.page {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .icon-container{
   border: solid 1px #262B2D;
@@ -72,6 +152,7 @@ export default {
   color: #262B2D;
   font-size: 20px;
   font-weight: 500;
+  
 }
 .scrolldown:hover{
   transform: translateY(10px);
@@ -87,6 +168,8 @@ export default {
   width: 90%;
   bottom: 50px;
   transition: all .2s ease;
+  scale: 0;
+  opacity: 0;
 }
 .blob:hover{
   rotate: 5deg;
@@ -97,7 +180,8 @@ export default {
   top: 0;
   scale: 1.2;
   rotate: 0deg;
-  transition: rotate .2s ease;
+  /* transition: rotate .2s ease; */
+  opacity: 0;
 }
 .text-header{
   position: absolute;
@@ -114,12 +198,15 @@ export default {
   position: absolute;
   right: 150px;
   top: 80px;
+  scale: 0;
+  opacity: 0;
 }
 .curvedText{
   width: 70%;
   position: absolute;
   transform: translateX(10%);
   bottom: -330px;
+  opacity: 0;
 }
 .right-part{
   width: 100%;
@@ -128,14 +215,9 @@ export default {
   display: flex;
   position: relative;
   height: 100vh;
-  border: 2px solid red;
+  overflow: hidden;
 }
-.components{
-  display: flex;
-  position: relative;
-  height: fit-content;
-  border: 2px solid red;
-}
+
 .language{
   display: flex;
   width: 100%;
@@ -200,8 +282,46 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  scale: 0;
+  opacity: 0;
 }
 .logotype{
   width: 70%;
+  scale: 0;
+  opacity: 0;
+}
+
+.components{
+  padding: 56px;
+}
+
+.components-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  margin-top: -20px;
+}
+
+.components-right-part h1{
+  color: #262B2D;
+  font-size: 60px;
+  font-weight: 500;
+  text-align: right;
+}
+.components-left-part img{
+  width: 100%;
+  scale: 1.2;
+}
+.components-left-part{
+  position: relative;
+  margin-left: 40px;
+}
+
+.curvedTextComponents{
+  width: 70%;
+  position: absolute;
+  transform: translateX(50%);
+  bottom: -330px;
 }
 </style>
