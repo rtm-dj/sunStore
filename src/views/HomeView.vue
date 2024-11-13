@@ -14,7 +14,7 @@
       <div class="right-part">
         <model-viewer class="model"
         ref="block_seventh"
-        src="/sunStore/src/assets/test.glb"
+        :src="modelSrc"
         camera-orbit="0deg 60deg 50deg"
         disable-tap
         camera-controls
@@ -53,10 +53,7 @@
   </div>
 </template>
 
-
 <script>
-
-
 export default {
   data() {
     return {
@@ -64,10 +61,14 @@ export default {
       showBanner: true,
       startY: 0,
       modal: false,
+      modelSrc: null,
     };
   },
 
-  mounted() {
+  async mounted() {
+    const modelPath = await import('@/assets/test.glb');
+    this.modelSrc = modelPath.default;
+
     this.showBannerAnimation();
 
     this.wheelHandler = this.handleWheel.bind(this);
@@ -75,6 +76,7 @@ export default {
     
     window.addEventListener('wheel', this.wheelHandler);
     window.addEventListener('touchmove', this.touchHandler);
+
   },
 
   beforeUnmount() {

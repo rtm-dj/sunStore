@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  assetsInclude: ['**/*.glb'],
   base: '/sunStore/',
   resolve: {
     alias: {
