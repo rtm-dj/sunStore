@@ -14,7 +14,7 @@
       <div class="right-part">
         <model-viewer class="model"
         ref="block_seventh"
-        src="/sunStore/src/assets/test.glb"
+        src="/sunStore/assets/test.glb"
         camera-orbit="0deg 60deg 50deg"
         disable-tap
         camera-controls
