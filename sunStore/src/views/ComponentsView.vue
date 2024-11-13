@@ -16,11 +16,55 @@
 </template>
 
 <script>
+import HeaderText from "../components/HeaderText.vue";
+import LabelText from "../components/LabelText.vue";
 export default {
-
+    components: { HeaderText, LabelText },
+    methods:{
+        handleWheel(event) {
+            if (event.deltaY < 0) {
+                this.hideBannerAnimation()
+                setTimeout(() => {
+                this.$router.push('/')
+                }, 500);
+            }
+        },
+    }
 }
 </script>
 
 <style scoped>
+.components{
+  padding: 56px;
+}
 
+.components-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  margin-top: -20px;
+}
+
+.components-right-part h1{
+  color: #262B2D;
+  font-size: 60px;
+  font-weight: 500;
+  text-align: right;
+}
+.components-left-part img{
+  width: 100%;
+  scale: 1.2;
+}
+.components-left-part{
+  position: relative;
+  margin-left: 40px;
+}
+
+.curvedTextComponents{
+  width: 70%;
+  position: absolute;
+  transform: translateX(50%);
+  bottom: -330px;
+}
 </style>
