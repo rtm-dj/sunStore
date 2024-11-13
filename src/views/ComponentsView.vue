@@ -16,16 +16,26 @@
 </template>
 
 <script>
+
 import HeaderText from "../components/HeaderText.vue";
 import LabelText from "../components/LabelText.vue";
 export default {
+  mounted() {
+    window.addEventListener('wheel', this.handleWheel);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('wheel', this.handleWheel);
+  },
+
+
     components: { HeaderText, LabelText },
     methods:{
         handleWheel(event) {
+          console.log(event.deltaY)
             if (event.deltaY < 0) {
-                this.hideBannerAnimation()
                 setTimeout(() => {
-                this.$router.push('/')
+                  this.$router.push('/')
                 }, 500);
             }
         },
