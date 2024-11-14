@@ -32,7 +32,7 @@
           <p class="scroll-text">Листай</p>
         </div>
         <div class="text-header">
-          <h1 ref="block_second">быстро снимает воспаление, отёк, зуд и раздражение.</h1>
+          <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение.</h1>
           <img src="../assets/blob1.svg" alt="" class="blob" ref="block_fifth">
         </div>
       </div>
@@ -413,7 +413,23 @@ export default {
   justify-content: center;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1800px) {
+  .model{
+    scale: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 40vw;
+    left: 30%;
+  }
+  .blob{
+    position: absolute;
+    right: -150px;
+    top: -80px;
+    scale: .7 !important;
+    opacity: 0;
+  }
   .buy{
     background-color: #8F8F76;
     width: 250px;
@@ -432,7 +448,7 @@ export default {
   }
   .text-header h1{
     color: #262B2D;
-    font-size: 3vw;
+    font-size: 35px;
     font-weight: 500;
     position: absolute;
     right: 150px;

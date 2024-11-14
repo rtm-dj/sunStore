@@ -4,16 +4,16 @@
         <div class="components-wrapper">
           <div class="components-left-part" v-if="slider == 1">
               <img src="../assets/components1.svg" alt="" ref="block_third">
-              <LabelText :title="'травы, согретые солнцем и напоенные дождем, передают свою энергию'" style="position: absolute; top: 30px; right: 60px;"/>
-              <LabelText :title="'aктивный отдых и натуральный компоненты идут рука об руку'" style="position: absolute; bottom: 60px; right: -80px;"/>
+              <LabelText :title="'травы, согретые солнцем и напоенные дождем, передают свою энергию'" id="labelText1"/>
+              <LabelText :title="'aктивный отдых и натуральный компоненты идут рука об руку'" id="labelText2"/>
           </div>
           <div class="components-left-part" v-if="slider == 2">
               <img src="../assets/components2.svg" alt="" ref="block_third">
-              <LabelText :title="'репеленты не всегда могут помочь, в этом случае можно прибегнуть к помощи крема после укусов насекомых'" style="position: absolute; top: -90px; right: -100px;"/>
+              <LabelText :title="'репеленты не всегда могут помочь, в этом случае можно прибегнуть к помощи крема после укусов насекомых'" id="labelText3"/>
           </div>
           <div class="components-left-part" v-if="slider == 3">
               <img src="../assets/components3.svg" alt="" ref="block_third">
-              <LabelText :title="'один из негативных моментов насекомые - комары, слепни, мошки и другие'" style="position: absolute; top: -15px; right: -120px;"/>
+              <LabelText :title="'один из негативных моментов насекомые - комары, слепни, мошки и другие'" id="labelText4"/>
           </div>
           <div class="components-right-part">
               <h1 v-if="slider == 1" ref="block_first">уменьшает зуд<br> и раздражение, <br> снижает <br> отечность</h1>
@@ -30,7 +30,7 @@
                 </div>
               </div>
           </div>
-          <img ref="block_second" src="../assets/curvedText_2.svg" alt="" class="curvedTextComponents">
+          <img src="../assets/curvedText_2.svg" alt="" class="curvedTextComponents">
         </div>
     </section>
 </template>
@@ -151,7 +151,7 @@ export default {
 <style scoped>
 *{
   /* transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940); */
-  transition: all .2s ease;
+  transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940);
 }
 .block-show{
     scale: 1 !important;
@@ -183,7 +183,7 @@ export default {
 }
 .components-left-part img{
   width: 100%;
-  scale: 1.6 !important;
+  scale: 1.3 !important;
   opacity: 0;
 }
 .components-left-part{
@@ -194,8 +194,7 @@ export default {
 .curvedTextComponents{
   height: 120%;
   position: absolute;
-  transform: translateX(50%) !important;
-  opacity: 0;
+  transform: translateX(70%);
 }
 .sliderNavigation{
   display: flex;
@@ -211,7 +210,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .2s ease;
 }
 .sliderArrow:hover{
   cursor: pointer;
@@ -222,23 +220,65 @@ export default {
   text-align: center;
 }
 
-@media (min-width: 768px) and (max-width: 1023px){
+#labelText1{
+    position: absolute;
+    top: 40px;
+    right: 80px;
+  }
+  #labelText2{
+    position: absolute;
+    bottom: 100px;
+    right: -30px;
+  }
+  #labelText3{
+    position: absolute;
+    top: -90px;
+    right: -100px;
+  }
+  #labelText4{
+    position: absolute;
+    top: -15px;
+    right: -120px;
+  }
+
+@media (min-width: 768px) and (max-width: 1800px){
+  .components{
+    padding: 56px;
+  }
+  .components-left-part{
+    position: relative;
+    margin-left: 40px;
+  }
+  .components-left-part img{
+    width: 80%;
+    scale: 1 !important;
+    opacity: 0;
+  }
   .components-right-part h1{
     color: #262B2D;
-    font-size: 40px;
+    font-size: 35px;
+    width: 300px;
     font-weight: 500;
     text-align: right;
     opacity: 0;
     scale: 0;
   }
-  .components-left-part img{
-    width: 100%;
-    scale: 1.2 !important;
-    opacity: 0;
+  
+  #labelText1{
+    top: 60px;
+    right: 150px;
   }
-  .components-left-part{
-    position: relative;
-    margin-left: 40px;
+  #labelText2{
+    bottom: 100px;
+    right: 50px;
+  }
+  #labelText3{
+    top: 10px;
+    right: 40px;
+  }
+  #labelText4{
+    top: 50px;
+    right: 10px;
   }
 }
 </style>

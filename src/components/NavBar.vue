@@ -59,4 +59,11 @@ button:hover{
     cursor: pointer;
     filter: brightness(90%);
 }
+
+@media (min-width: 768px) and (max-width: 1800px){
+    button:hover{
+        cursor: pointer;
+        filter: brightness(100%);
+    }
+}
 </style>
