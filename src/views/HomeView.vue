@@ -413,6 +413,13 @@ export default {
 }
 
 @media (min-width: 768px) and (max-width: 1800px) {
+  .copyright{
+    color: #262B2D;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
   .model{
     scale: 0;
     opacity: 0;

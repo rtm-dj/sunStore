@@ -18,7 +18,19 @@ body{
   background: #FFFDEF;
   font-family: 'Montserrat Alternates';
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+img{
+  pointer-events: none;
 }
 </style>
