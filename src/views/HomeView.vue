@@ -46,6 +46,7 @@
         <div class="links">
           <a class="link" href="https://www.ozon.ru/">Ozon</a>
           <a class="link" href="https://www.wildberries.ru/">Wildberries</a>
+          <a class="link" href="https://www.wildberries.ru/">Маркет</a>
         </div>
         
       </div>
@@ -220,16 +221,11 @@ export default {
   scale: 0;
   opacity: 0;
 }
-.blob:hover{
-  rotate: 5deg;
-}
 .blob{
   position: absolute;
   right: 0;
   top: 0;
   scale: 1.2;
-  rotate: 0deg;
-  /* transition: rotate .2s ease; */
   opacity: 0;
 }
 .text-header{
@@ -242,7 +238,7 @@ export default {
 
 .text-header h1{
   color: #262B2D;
-  font-size: 3vw;
+  font-size: 60px;
   font-weight: 500;
   position: absolute;
   right: 150px;
@@ -303,12 +299,12 @@ export default {
 }
 .buy{
   background-color: #8F8F76;
-  width: 250px;
-  height: 46px;
+  width: 400px;
+  height: 60px;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   border: none;
-  border-radius: 23px;
+  border-radius: 30px;
   font-family: 'Montserrat Alternates';
   transition: all .2s ease;
   margin-bottom: 50px;
@@ -370,37 +366,79 @@ export default {
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 400px;
-  height: 200px;
-  padding: 15px;
+  width: 450px;
+  height: 300px;
+  padding: 25px;
   position: absolute;
-  background-color: white;
-  border-radius: 10px;
+  background-color: #fffdef56;
+  border-radius: 20px;
+  border: 1px solid #FFFDEF;
+  backdrop-filter: blur(20px);
 }
 
 .cancel{
   width: 20px;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 
 .links{
   display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  margin-top: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  gap: 12px;
+}
+
+.link:hover{
+  filter: brightness(90%);
 }
 
 .link{
-  background-color: #8F8F76;
-  width: 250px;
-  color: white;
+  background-color: #FFFDEF;
+  width: 350px;
+  height: 46px;
+  color: #262B2D;
   font-size: 20px;
   text-align: center;
   border: none;
   border-radius: 23px;
   font-family: 'Montserrat Alternates';
+  font-weight: 500;
   transition: all .2s ease;
-  padding: 10px 20px;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .buy{
+    background-color: #8F8F76;
+    width: 250px;
+    height: 46px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 23px;
+    font-family: 'Montserrat Alternates';
+    transition: all .2s ease;
+    margin-bottom: 50px;
+  }
+  .buy:hover{
+    cursor: pointer;
+    background-color: #71715d;
+  }
+  .text-header h1{
+    color: #262B2D;
+    font-size: 3vw;
+    font-weight: 500;
+    position: absolute;
+    right: 150px;
+    top: 80px;
+    scale: 0;
+    opacity: 0;
+  }
 }
 </style>

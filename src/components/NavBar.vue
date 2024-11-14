@@ -1,0 +1,62 @@
+<template>
+  <div class="row">
+    <button @click="this.$router.push('/')" :class="$route.path === '/' ? 'sectionActive' : 'section'">Главная</button>
+    <button @click="this.$router.push('/components')" :class="$route.path === '/components' ? 'sectionActive' : 'section'">Компоненты</button>
+    <button @click="this.$router.push('/buy')" :class="$route.path === '/buy' ? 'sectionActive' : 'section'">Купить</button>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.row{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 44px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0EDE0;
+    border-radius: 22px;
+    z-index: 5;
+    padding: 2px;
+    gap: 40px;
+}
+.section{
+    padding: 0 30px;
+    background-color: #F0EDE0;
+    color: #262B2D;
+    border: none;
+    font-size: 14px;
+    font-family: 'Montserrat Alternates';
+    font-weight: 500;
+}
+
+.sectionActive{
+    padding: 0 30px;
+    background-color: #8F8F76;
+    color: #ffffff;
+    border: none;
+    font-size: 14px;
+    font-family: 'Montserrat Alternates';
+    font-weight: 500;
+}
+button{
+    transition: all .2s ease;
+    border-radius: 21px;
+    height: 42px;
+}
+
+button:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+</style>
