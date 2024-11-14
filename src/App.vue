@@ -29,8 +29,4 @@ body{
   -o-user-select: none;
   user-select: none;
 }
-
-img{
-  pointer-events: none;
-}
 </style>
