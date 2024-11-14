@@ -161,4 +161,58 @@ h3{
     margin: 0 50px 0 50px;
     padding-top: 50px;
 }
+@media (min-width: 768px) and (max-width: 1800px){
+    .ml{
+        font-size: 70px;
+        margin: 40px 0;
+        font-weight: 500;
+    }
+    span{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .subtitle{
+        font-size: 14px;
+        font-weight: 500;
+        color: #ACABA4;
+        text-align: center;
+    }
+    h3{
+        font-size: 16px;
+        font-weight: 500;
+        color: #262B2D;
+        text-align: center;
+        margin: 0 50px 0 50px;
+        padding-top: 50px;
+    }
+    .photo{
+        height: 85vh;
+        width: 50%;
+        background-color:blue;
+        border-radius: 50px;
+        object-fit: cover;
+        scale: 0;
+        opacity: 0;
+    }
+
+    .about{
+        height: 85vh;
+        width: 50%;
+    }
+    .about-wrapper{
+        background-color: #F0EDE0;
+        border-radius: 50px;
+        height: 50vh;
+        margin-bottom: 1vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;  
+    }
+
+    .buy-buttons{
+        background-color: #8F8F76;
+        border-radius: 50px;
+        height: 34vh;
+    }
+}
 </style>
