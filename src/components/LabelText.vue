@@ -21,6 +21,10 @@ export default {
     scale: 1 !important;
     opacity: 1 !important;
 }
+
+.subtitle:hover{
+    scale: 1.1!important;
+}
 .subtitle{
   border: 1px solid #8F8F76;
   backdrop-filter: blur(10px);

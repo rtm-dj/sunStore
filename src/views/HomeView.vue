@@ -180,7 +180,6 @@ export default {
 .block-show{
     scale: 1 !important;
     opacity: 1 !important;
-    
 }
 .page {
   overflow-y: scroll;
