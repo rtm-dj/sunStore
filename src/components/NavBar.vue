@@ -2,6 +2,7 @@
   <div class="row">
     <button @click="this.$router.push('/')" :class="$route.path === '/' ? 'sectionActive' : 'section'">Главная</button>
     <button @click="this.$router.push('/components')" :class="$route.path === '/components' ? 'sectionActive' : 'section'">Компоненты</button>
+    <button @click="this.$router.push('/about')" :class="$route.path === '/about' ? 'sectionActive' : 'section'">О компании</button>
     <button @click="this.$router.push('/buy')" :class="$route.path === '/buy' ? 'sectionActive' : 'section'">Купить</button>
   </div>
 </template>

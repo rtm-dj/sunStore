@@ -41,8 +41,9 @@
     <section class="modal" v-if="modal">
       <div class="overlay"></div>
       <div class="modal-wrapper">
-        <img src="../assets/cancel.svg" class="cancel" @click="modal = false">
-
+        <svg @click="modal = false" class="cancel" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.46 7L14 12.54V14H12.54L7 8.46L1.46 14H0V12.54L5.54 7L0 1.46V0H1.46L7 5.54L12.54 0H14V1.46L8.46 7Z" fill="#262B2D"/>
+        </svg>
         <div class="links">
           <a class="link" href="https://www.ozon.ru/">Ozon</a>
           <a class="link" href="https://www.wildberries.ru/">Wildberries</a>
