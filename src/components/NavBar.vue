@@ -14,6 +14,11 @@ export default {
 </script>
 
 <style scoped>
+@media (max-width: 768px){
+    .row{
+        display: none !important;
+    }
+}
 .row{
     position: fixed;
     top: 20px;

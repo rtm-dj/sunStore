@@ -8,9 +8,10 @@
         </div>
         <img src="../assets/logo.png" alt="" class="logotype" ref="block_first">
         <div class="bottom-action" ref="block_third">
-          <span class="copyright">2024 © кладовая солнца</span>
+          <span class="copyright">2025 © кладовая солнца</span>
           <button class="buy" @click="modal = true">Купить</button>
         </div>
+        <BurgerMenu/>
       </div>
       <div class="right-part">
         <model-viewer class="model"
@@ -93,15 +94,15 @@ export default {
       if (event.touches.length > 0) {
         const currentY = event.touches[0].clientY;
         if (this.startY === 0) {
-          this.startY = currentY; // Фиксируем начальную точку свайпа
+          this.startY = currentY;
         }
 
-        if (this.startY - currentY > 50) { // Прокрутка вниз (свайп вверх)
+        if (this.startY - currentY > 50) { 
           this.hideBannerAnimation();
           setTimeout(() => {
             this.$router.push('/components');
           }, 800);
-        } else if (currentY - this.startY > 50) { // Прокрутка вверх (свайп вниз)
+        } else if (currentY - this.startY > 50) { 
           this.showBannerAnimation();
         }
       }
@@ -335,6 +336,111 @@ export default {
   height: 100vh;
   width: 30vw;
   left: 30%;
+}
+
+@media (max-width: 768px){
+  .banner{
+    display: block;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .left-part{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: solid 1px #8F8F76;
+  }
+  .logotype{
+    width: 30%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    scale: 0;
+    opacity: 0;
+  }
+  .language{
+    width: fit-content;
+  }
+  .bottom-action{
+    display: none;
+  }
+  .text-header{
+    position: absolute;
+    right: 20px;
+    top: 120px;
+    width: 500px;
+    text-align: end;
+  }
+  .text-header h1{
+    color: #262B2D;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    scale: 0;
+    opacity: 0;
+  }
+  .blob{
+    position: absolute;
+    left: 90px;
+    top: -150px;
+    scale: 0.35 !important;
+    opacity: 0;
+  }
+  .right-part{
+    height: 100%;
+    padding-top: 80px;
+  }
+  .model{
+    scale: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    height: 50%;
+    width: 100%;
+    left: 0;
+  }
+  .scrolldown{
+    display: none;
+  }
+  .bottom-action{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    scale: 0;
+    opacity: 0;
+  }
+  .buy{
+    background-color: #8F8F76;
+    width: 250px;
+    height: 46px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Montserrat Alternates';
+    transition: all .2s ease;
+    margin-bottom: 24px;
+  }
+  .copyright{
+    color: #262B2D;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .language{
+    margin-top: 0;
+  }
 }
 
 
