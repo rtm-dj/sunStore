@@ -29,7 +29,7 @@
                 <p>Купить</p>
             </div>
             <div class="bottomContent">
-                <p>2024 © Кладовая солнца</p>
+                <p>2025 © Кладовая солнца</p>
                 <p>{{ 'Language' }}</p>
             </div>
         </div>
