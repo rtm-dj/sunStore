@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .row{
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 0;
     left: 0;
@@ -25,7 +25,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F0EDE0;
+    background-color: #f0ede0a1;
+    backdrop-filter: blur(20px);
     border-radius: 22px;
     z-index: 5;
     padding: 2px;
@@ -33,7 +34,7 @@ export default {
 }
 .section{
     padding: 0 30px;
-    background-color: #F0EDE0;
+    background-color: transparent;
     color: #262B2D;
     border: none;
     font-size: 14px;
@@ -59,6 +60,9 @@ button{
 button:hover{
     cursor: pointer;
     filter: brightness(90%);
+}
+.section:hover{
+    background-color: #e3e0d3;
 }
 
 @media (min-width: 768px) and (max-width: 1800px){

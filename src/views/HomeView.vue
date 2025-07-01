@@ -73,11 +73,11 @@ export default {
 
     this.showBannerAnimation();
 
-    this.wheelHandler = this.handleWheel.bind(this);
-    this.touchHandler = this.handleTouch.bind(this);
+    // this.wheelHandler = this.handleWheel.bind(this);
+    // this.touchHandler = this.handleTouch.bind(this);
     
-    window.addEventListener('wheel', this.wheelHandler);
-    window.addEventListener('touchmove', this.touchHandler);
+    // window.addEventListener('wheel', this.wheelHandler);
+    // window.addEventListener('touchmove', this.touchHandler);
 
   },
 

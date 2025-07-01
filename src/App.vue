@@ -18,7 +18,7 @@ body{
   background: #FFFDEF;
   font-family: 'Montserrat Alternates';
   width: 100vw;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 * {
   -webkit-tap-highlight-color: transparent;

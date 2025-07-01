@@ -17,16 +17,15 @@
             <p class="naming">Сертификат качества</p>
             <p class="naming">Состав</p>
             <p class="naming">Инструкция по применению</p>
-            <p class="naming">Сотрудничество</p>
         </div>
         <div class="footer">
             <div class="smallLogo">
                 <img src="../assets/logo-white.png" alt="">
             </div>
             <div class="menuItems">
-                <p>Главная</p>
-                <p>Компоненты</p>
-                <p>О компании</p>
+                <p @click="this.$router.push('/')">Главная</p>
+                <p @click="this.$router.push('/components')">Компоненты</p>
+                <p @click="this.$router.push('/about')">О компании</p>
                 <p>Купить</p>
             </div>
             <div class="bottomContent">

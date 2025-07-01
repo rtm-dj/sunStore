@@ -2,17 +2,17 @@
     <section class="components">
         <HeaderText :title="'компоненты'"/>
         <div class="components-wrapper">
-          <div class="components-left-part" v-if="slider == 1">
-              <img src="../assets/components1.svg" alt="" ref="block_third">
+          <div class="components-left-part" v-if="slider == 1"> 
+              <img :src="components1" alt="" ref="block_third">
               <LabelText :title="'травы, согретые солнцем и напоенные дождем, передают свою энергию'" id="labelText1"/>
               <LabelText :title="'aктивный отдых и натуральный компоненты идут рука об руку'" id="labelText2"/>
           </div>
           <div class="components-left-part" v-if="slider == 2">
-              <img src="../assets/components2.svg" alt="" ref="block_third">
+              <img :src="components2" alt="" ref="block_third">
               <LabelText :title="'репеленты не всегда могут помочь, в этом случае можно прибегнуть к помощи крема после укусов насекомых'" id="labelText3"/>
           </div>
           <div class="components-left-part" v-if="slider == 3">
-              <img src="../assets/components3.svg" alt="" ref="block_third">
+              <img :src="components3" alt="" ref="block_third">
               <LabelText :title="'один из негативных моментов насекомые - комары, слепни, мошки и другие'" id="labelText4"/>
           </div>
           <div class="components-right-part">
@@ -30,12 +30,15 @@
                 </div>
               </div>
           </div>
-          <img src="../assets/curvedText_2.svg" alt="" class="curvedTextComponents">
+          <img style="display: none;" src="../assets/curvedText_2.svg" alt="" class="curvedTextComponents">
         </div>
     </section>
 </template>
 
 <script>
+import components1 from '../assets/components1.svg';
+import components2 from '../assets/components2.svg';
+import components3 from '../assets/components3.svg';
 
 import HeaderText from "../components/HeaderText.vue";
 import LabelText from "../components/LabelText.vue";
@@ -44,7 +47,17 @@ export default {
       return {
         startY: 0,
         slider: 1,
+
+        components1,
+        components2,
+        components3,
       };
+    },
+    created() {
+      [components1, components2, components3].forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
     },
 
     watch: {
@@ -60,11 +73,11 @@ export default {
     mounted() {
       this.showComponentsAnimation();
 
-      this.wheelHandler = this.handleWheel.bind(this);
-      this.touchHandler = this.handleTouch.bind(this);
+      // this.wheelHandler = this.handleWheel.bind(this);
+      // this.touchHandler = this.handleTouch.bind(this);
       
-      window.addEventListener('wheel', this.wheelHandler);
-      window.addEventListener('touchmove', this.touchHandler);
+      // window.addEventListener('wheel', this.wheelHandler);
+      // window.addEventListener('touchmove', this.touchHandler);
     },
 
     beforeUnmount() {
