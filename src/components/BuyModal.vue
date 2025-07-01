@@ -91,4 +91,39 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 768px){
+  .modal-wrapper{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 300px;
+    height: 180px;
+    padding: 25px;
+    position: absolute;
+    background-color: #fffdef56;
+    border-radius: 20px;
+    border: 1px solid #FFFDEF;
+    backdrop-filter: blur(20px);
+  }
+  .link{
+    background-color: #FFFDEF;
+    width: 204px;
+    height: 36px;
+    color: #262B2D;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 23px;
+    font-family: 'Montserrat Alternates';
+    font-weight: 500;
+    transition: all .2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

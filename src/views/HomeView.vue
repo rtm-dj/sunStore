@@ -11,7 +11,9 @@
           <span class="copyright">2025 © кладовая солнца</span>
           <button class="buy" @click="modal = true">Купить</button>
         </div>
+
         <BurgerMenu/>
+        
       </div>
       <div class="right-part">
         <model-viewer class="model"
@@ -165,7 +167,7 @@ export default {
 
 <style scoped>
 *{
-  transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+  transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
 }
 .block-show{
     scale: 1 !important;
