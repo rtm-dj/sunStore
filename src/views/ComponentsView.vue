@@ -1,6 +1,9 @@
 <template>
     <section class="components">
-        <HeaderText :title="'компоненты'"/>
+        <div class="head">
+          <BurgerMenu/>
+          <HeaderText :title="'компоненты'"/>
+        </div>
         <div class="components-wrapper">
           <div class="components-left-part" v-if="slider == 1"> 
               <img :src="components1" alt="" ref="block_third">
@@ -32,13 +35,23 @@
           </div>
           <img style="display: none;" src="../assets/curvedText_2.svg" alt="" class="curvedTextComponents">
         </div>
+
+        <div class="mobile-components">
+          <img :src="mobComponents1" style="width: 100%;" alt="" ref="block_third">
+          <img :src="mobComponents2" style="width: 100%;" alt="" ref="block_third">
+          <img :src="mobComponents3" style="width: 100%;" alt="" ref="block_third">
+        </div>
     </section>
 </template>
 
 <script>
-import components1 from '../assets/components1.svg';
-import components2 from '../assets/components2.svg';
-import components3 from '../assets/components3.svg';
+import webComponents1 from '../assets/web-components1.svg';
+import webComponents2 from '../assets/web-components2.svg';
+import webComponents3 from '../assets/web-components3.svg';
+
+import mobComponents1 from '../assets/mob-components1.svg';
+import mobComponents2 from '../assets/mob-components2.svg';
+import mobComponents3 from '../assets/mob-components3.svg';
 
 import HeaderText from "../components/HeaderText.vue";
 import LabelText from "../components/LabelText.vue";
@@ -48,13 +61,16 @@ export default {
         startY: 0,
         slider: 1,
 
-        components1,
-        components2,
-        components3,
+        webComponents1,
+        webComponents2,
+        webComponents3,
+        mobComponents1,
+        mobComponents2,
+        mobComponents3,
       };
     },
-    created() {
-      [components1, components2, components3].forEach(src => {
+    mounted() {
+      [webComponents1, webComponents2, webComponents3,  mobComponents1, mobComponents2, mobComponents3].forEach(src => {
         const img = new Image();
         img.src = src;
       });
@@ -292,6 +308,23 @@ export default {
   #labelText4{
     top: 50px;
     right: 10px;
+  }
+}
+@media (max-width: 768px){
+  .components-wrapper{
+    display: none;
+  }
+  .components{
+    padding: 12px;
+    padding-top: 54px;
+    overflow-x: hidden;
+  }
+  .head{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* position: fixed; */
+    background-color: #FFFDEF;
   }
 }
 </style>

@@ -1,22 +1,25 @@
 <template>
+    <div class="head">
+        <BurgerMenu/>
+        <HeaderText :title="'о компании'"/>
+    </div>
     <div class="aboutpage">
         <div class="company">
             <div class="bigLogo">
                 <img src="../assets/logo.png" alt="" class="logo">
                 <h1>ИП Токмачева Е. Н.</h1>
                 <div class="info">
-                    <p>123423</p>
-                    <p>г. Москва, Карамышевская наб., 22А</p>
+                    <p>Карамышевская набережная, д. 22А</p>
                 </div>
             </div>
-            <div class="description">
-                <p>Кладовая солнца - текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</p>
+            <div class="documents">
+                <p class="naming">Сертификат качества</p>
+                <p class="naming">Состав</p>
+                <p class="naming">Инструкция по применению</p>
             </div>
-        </div>
-        <div class="documents">
-            <p class="naming">Сертификат качества</p>
-            <p class="naming">Состав</p>
-            <p class="naming">Инструкция по применению</p>
+            <div class="description">
+                <p>Кладовая Солнца – это бренд натуральной косметики, которая разрабатывается, опираясь на научные данные, и использует в своем составе максимум натуральных компонентов. В своей работе мы в первую очередь руководствуемся принципом « не навреди» и не даем пустых обещаний — наша косметика работает.</p>
+            </div>
         </div>
         <div class="footer">
             <div class="smallLogo">
@@ -38,8 +41,9 @@
 </template>
 
 <script>
+import HeaderText from "../components/HeaderText.vue";
 export default {
-
+    components: { HeaderText },
 }
 </script>
 
@@ -86,14 +90,14 @@ export default {
 }
 .documents{
     margin-top: 100px;
-    height: 60px;
+    height: 40px;
     border: none;
-    border-radius: 40px;
-    background-color: #8F8F76;
-    padding: 20px;
+    border-radius: 20px;
+    background-color: #F0EDE0;
+    padding: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 44px;
 }   
 .bigLogo{
     display: flex;
@@ -119,5 +123,46 @@ export default {
 .description p{
     font-size: 24px;
     width: 600px;
+}
+@media (max-width: 768px){
+    .company{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 10%;
+        gap: 70px;
+    }   
+    .logo{
+        width: 200px;
+    }
+    h1{
+        font-size: 16px;
+        color: #262B2D;
+    }
+    .description{
+        padding: 0 40px;
+    }
+    .description p{
+        font-size: 18px;
+        width: 100%;
+    }
+    .head{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        /* position: fixed; */
+        background-color: #FFFDEF;
+        margin-top: 54px;
+        margin-left: 12px;
+    }
+    .naming{
+        border-radius: 20px;
+        border: none;
+        padding: 0;
+        font-size: 10px;
+        color: #262B2D;
+        width: fit-content;
+    }
 }
 </style>

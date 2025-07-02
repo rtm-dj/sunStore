@@ -50,4 +50,32 @@ export default {
   font-size: 16px;
 }
 
+@media (max-width: 768px){
+    .title{
+        height: 36px;
+        width: fit-content;
+        border: 1px solid #512D38;
+        border-radius: 23px;
+        display: flex;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+    }
+
+    .title-circle{
+        height: 36px;
+        width: 36px;
+        border-right: solid 1px #512D38;
+        border-radius: 23px;
+    }
+
+    .title-text{
+        font-family: 'Montserrat Alternates';
+        font-weight: 500;
+        border: none;
+        margin: 10px 15px 10px 10px;
+        font-size: 12px;
+    }
+}
+
 </style>

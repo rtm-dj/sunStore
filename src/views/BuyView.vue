@@ -24,60 +24,60 @@
 
 <script>
 export default {
-async mounted() {
-    this.showComponentsAnimation();
-},
-methods:{
-    showComponentsAnimation() {
-        let index = 0;
-        const blocks = [
-            this.$refs.block_first,
-            this.$refs.block_second,
-            this.$refs.block_third,
-            this.$refs.block_fourth,
-            this.$refs.block_fifth,
-            this.$refs.block_sixth,
-            this.$refs.block_seventh,
-        ];
-
-        const interval = setInterval(() => {
-            if (index < blocks.length) {
-            const block = blocks[index];
-            if (block) {
-                block.classList.add('block-show');
-            }
-            index++;
-            } else {
-            clearInterval(interval);
-            }
-        }, 50);
+    async mounted() {
+        this.showComponentsAnimation();
     },
+    methods:{
+        showComponentsAnimation() {
+            let index = 0;
+            const blocks = [
+                this.$refs.block_first,
+                this.$refs.block_second,
+                this.$refs.block_third,
+                this.$refs.block_fourth,
+                this.$refs.block_fifth,
+                this.$refs.block_sixth,
+                this.$refs.block_seventh,
+            ];
 
-    hideComponentsAnimation() {
-        let index = 0;
-        const blocks = [
-            this.$refs.block_first,
-            this.$refs.block_second,
-            this.$refs.block_third,
-            this.$refs.block_fourth,
-            this.$refs.block_fifth,
-            this.$refs.block_sixth,
-            this.$refs.block_seventh,
-        ];
+            const interval = setInterval(() => {
+                if (index < blocks.length) {
+                const block = blocks[index];
+                if (block) {
+                    block.classList.add('block-show');
+                }
+                index++;
+                } else {
+                clearInterval(interval);
+                }
+            }, 50);
+        },
 
-        const interval = setInterval(() => {
-            if (index < blocks.length) {
-            const block = blocks[index];
-            if (block) {
-                block.classList.remove('block-show');
-            }
-            index++;
-            } else {
-            clearInterval(interval);
-            }
-        }, 50);
-    },
-}
+        hideComponentsAnimation() {
+            let index = 0;
+            const blocks = [
+                this.$refs.block_first,
+                this.$refs.block_second,
+                this.$refs.block_third,
+                this.$refs.block_fourth,
+                this.$refs.block_fifth,
+                this.$refs.block_sixth,
+                this.$refs.block_seventh,
+            ];
+
+            const interval = setInterval(() => {
+                if (index < blocks.length) {
+                const block = blocks[index];
+                if (block) {
+                    block.classList.remove('block-show');
+                }
+                index++;
+                } else {
+                clearInterval(interval);
+                }
+            }, 50);
+        },
+    }
 }
 </script>
 

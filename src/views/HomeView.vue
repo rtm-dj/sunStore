@@ -12,7 +12,7 @@
           <button class="buy" @click="modal = true">Купить</button>
         </div>
 
-        <BurgerMenu/>
+        <BurgerMenu style="margin-left: 20px;"/>
         
       </div>
       <div class="right-part">
@@ -36,7 +36,7 @@
           <p class="scroll-text">Листай</p>
         </div>
         <div class="text-header">
-          <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение.</h1>
+          <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение</h1>
           <img src="../assets/blob1.svg" alt="" class="blob" ref="block_fifth">
         </div>
       </div>
@@ -344,22 +344,22 @@ export default {
   .banner{
     display: block;
     position: relative;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
   }
   .left-part{
     display: flex;
     flex-direction: row-reverse;
     gap: 50px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: fit-content;
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
     border-bottom: solid 1px #8F8F76;
   }
   .logotype{
-    width: 30%;
+    width: 20%;
     aspect-ratio: 1;
     object-fit: contain;
     scale: 0;
@@ -367,6 +367,7 @@ export default {
   }
   .language{
     width: fit-content;
+    margin-right: 20px;
   }
   .bottom-action{
     display: none;
@@ -384,20 +385,20 @@ export default {
     font-weight: 500;
     position: absolute;
     right: 0;
-    top: 80px;
+    top: 15px;
     scale: 0;
     opacity: 0;
   }
   .blob{
     position: absolute;
     left: 90px;
-    top: -150px;
+    top: -200px;
     scale: 0.35 !important;
     opacity: 0;
   }
   .right-part{
-    height: 100%;
-    padding-top: 80px;
+    height: 500px;
+    padding-top: 50px;
   }
   .model{
     scale: 0;
@@ -412,6 +413,11 @@ export default {
     display: none;
   }
   .bottom-action{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    left: 0;
+    right: 0;
     position: absolute;
     bottom: 20px;
     display: flex;
