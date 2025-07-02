@@ -347,7 +347,7 @@ export default {
   .banner{
     display: block;
     position: relative;
-    height: 90vh;
+    height: 100%;
     overflow: hidden;
   }
   .left-part{
@@ -401,7 +401,7 @@ export default {
   }
   .right-part{
     height: 500px;
-    padding-top: 50px;
+    padding-top: 80px;
   }
   .model{
     scale: 0;
