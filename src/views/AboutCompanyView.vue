@@ -1,6 +1,6 @@
 <template>
     <div class="head">
-        <BurgerMenu/>
+        <BurgerMenu id="burger"/>
         <HeaderText :title="'о компании'"/>
     </div>
     <div class="aboutpage">
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style scoped>
+#burger{
+  display: none;
+}
 .bottomContent{
     display: flex;
     font-size: 16px;
@@ -125,6 +128,9 @@ export default {
     width: 600px;
 }
 @media (max-width: 768px){
+    #burger{
+        display: block;
+    }
     .company{
         display: flex;
         align-items: center;

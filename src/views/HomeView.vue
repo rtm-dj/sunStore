@@ -12,7 +12,7 @@
           <button class="buy" @click="modal = true">Купить</button>
         </div>
 
-        <BurgerMenu style="margin-left: 20px;"/>
+        <BurgerMenu class="burger" style="margin-left: 20px;"/>
         
       </div>
       <div class="right-part">
@@ -168,6 +168,9 @@ export default {
 <style scoped>
 *{
   transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+}
+.burger{
+  display: none;
 }
 .block-show{
     scale: 1 !important;
@@ -448,6 +451,9 @@ export default {
   }
   .language{
     margin-top: 0;
+  }
+  .burger{
+    display: block;
   }
 }
 

@@ -1,21 +1,21 @@
 <template>
     <section class="components">
         <div class="head">
-          <BurgerMenu/>
+          <BurgerMenu id="burger"/>
           <HeaderText :title="'компоненты'"/>
         </div>
         <div class="components-wrapper">
           <div class="components-left-part" v-if="slider == 1"> 
-              <img :src="components1" alt="" ref="block_third">
+              <img :src="webComponents1" alt="" ref="block_third">
               <LabelText :title="'травы, согретые солнцем и напоенные дождем, передают свою энергию'" id="labelText1"/>
               <LabelText :title="'aктивный отдых и натуральный компоненты идут рука об руку'" id="labelText2"/>
           </div>
           <div class="components-left-part" v-if="slider == 2">
-              <img :src="components2" alt="" ref="block_third">
+              <img :src="webComponents2" alt="" ref="block_third">
               <LabelText :title="'репеленты не всегда могут помочь, в этом случае можно прибегнуть к помощи крема после укусов насекомых'" id="labelText3"/>
           </div>
           <div class="components-left-part" v-if="slider == 3">
-              <img :src="components3" alt="" ref="block_third">
+              <img :src="webComponents3" alt="" ref="block_third">
               <LabelText :title="'один из негативных моментов насекомые - комары, слепни, мошки и другие'" id="labelText4"/>
           </div>
           <div class="components-right-part">
@@ -37,9 +37,9 @@
         </div>
 
         <div class="mobile-components">
-          <img :src="mobComponents1" style="width: 100%;" alt="" ref="block_third">
-          <img :src="mobComponents2" style="width: 100%;" alt="" ref="block_third">
-          <img :src="mobComponents3" style="width: 100%;" alt="" ref="block_third">
+          <img :src="mobComponents1" style="width: 100%;" alt="">
+          <img :src="mobComponents2" style="width: 100%;" alt="">
+          <img :src="mobComponents3" style="width: 100%;" alt="">
         </div>
     </section>
 </template>
@@ -180,7 +180,13 @@ export default {
 <style scoped>
 *{
   /* transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940); */
-  transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+  transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+}
+#burger{
+  display: none;
+}
+.mobile-components{
+  display: none;
 }
 .block-show{
     scale: 1 !important;
@@ -250,25 +256,25 @@ export default {
 }
 
 #labelText1{
-    position: absolute;
-    top: 40px;
-    right: 80px;
-  }
-  #labelText2{
-    position: absolute;
-    bottom: 100px;
-    right: -30px;
-  }
-  #labelText3{
-    position: absolute;
-    top: -90px;
-    right: -100px;
-  }
-  #labelText4{
-    position: absolute;
-    top: -15px;
-    right: -120px;
-  }
+  position: absolute;
+  top: 40px;
+  right: 80px;
+}
+#labelText2{
+  position: absolute;
+  bottom: 100px;
+  right: -30px;
+}
+#labelText3{
+  position: absolute;
+  top: -90px;
+  right: -100px;
+}
+#labelText4{
+  position: absolute;
+  top: -15px;
+  right: -120px;
+}
 
 @media (min-width: 768px) and (max-width: 1800px){
   .components{
@@ -311,6 +317,12 @@ export default {
   }
 }
 @media (max-width: 768px){
+  #burger{
+    display: block;
+  }
+  .mobile-components{
+    display: block;
+  }
   .components-wrapper{
     display: none;
   }
