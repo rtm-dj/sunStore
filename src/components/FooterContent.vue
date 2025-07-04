@@ -31,6 +31,13 @@ export default {
     width: 90%;
     align-items: center;
 }
+.menuItems p{
+    transition: all .2s ease;
+}
+.menuItems p:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
 .menuItems{
     display: flex;
     font-size: 16px;
@@ -43,12 +50,21 @@ export default {
 }
 .footer{
     margin-top: auto;
-    width: 100%;
     padding: 14px 0;
     background-color: #8F8F76;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@media (max-width: 768px){
+    .menuItems{
+        text-align: center;
+        display: block;
+        font-size: 16px;
+        color: #FFFDEF;
+        gap: 90px;
+        align-items: center;
+    }
 }
 </style>

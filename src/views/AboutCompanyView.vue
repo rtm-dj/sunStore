@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; font-weight: 500; margin-bottom: 50px ;">
+            <div style="text-align: center; font-weight: 500; margin-bottom: 50px;">
                 <p>Изготовитель. ООО «Адванс», 127106, г.Москва, Алтуфьевское шоссе, д.27</p>
                 <p>Организация, принимающая претензии.</p>
                 <p>ИП Токмачева Е.Н., 123423, г.Москва, Карамышевская наб., 22А, кв.64</p>
@@ -164,7 +164,6 @@ span{
 }
 .aboutpage{
     overflow: hidden;
-    width: 100vw;
 }
 .naming{
     padding: 5px;
@@ -228,6 +227,53 @@ span{
     text-align: center;
 }
 @media (max-width: 768px){
+    .divider{
+        width: 1px;
+        height: 400px;
+    }
+    .size-item img{
+        height: 210px;
+        width: 40vw;
+        object-fit: cover;
+        border-radius: 50px;
+    }
+    .green-block{
+        padding: 10px;
+        border-radius: 24px;
+        height: fit-content;
+        width: 35vw;
+    }
+    .consist p{
+        width: 90% !important;
+        margin-bottom: 20px !important;
+    }
+    .certificate p{
+        text-align: center;
+        margin: 0 !important;
+        margin-bottom: 20px !important;
+    }
+    .certificate p, .instruction p, .consist p{
+        margin: 0 20px;
+    }
+
+    .instruction img{
+        width: 80vw;
+        border-radius: 50px;
+        margin: 20px 0;
+    }
+    .documents{
+        width: 90%;
+        display: flex;
+        border-radius: 30px;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .naming{
+        font-size: 10px;
+        border-radius: 20px;
+        height: 40px;
+        padding: 10px;
+    }
     #burger{
         display: block;
     }
@@ -261,14 +307,6 @@ span{
         background-color: #FFFDEF;
         margin-top: 54px;
         margin-left: 12px;
-    }
-    .naming{
-        border-radius: 20px;
-        border: none;
-        padding: 0;
-        font-size: 10px;
-        color: #262B2D;
-        width: fit-content;
     }
 }
 </style>

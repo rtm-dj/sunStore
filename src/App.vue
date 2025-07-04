@@ -17,7 +17,7 @@ body{
   padding: 0;
   background: #FFFDEF;
   font-family: 'Montserrat Alternates';
-  width: 100vw;
+  /* width: 100vw; */
   /* overflow: hidden; */
 }
 * {

@@ -22,9 +22,8 @@ export default {
 .row{
     position: fixed;
     top: 20px;
-    right: 0;
-    left: 0;
-    margin: auto;
+    left: 50%;
+    transform: translate(-50%);
     height: 44px;
     width: fit-content;
     display: flex;

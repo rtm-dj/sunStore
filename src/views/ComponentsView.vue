@@ -42,6 +42,8 @@
           <img :src="mobComponents3" style="width: 100%;" alt="">
         </div>
     </section>
+    <Footer/>
+    
 </template>
 
 <script>
@@ -55,6 +57,7 @@ import mobComponents3 from '../assets/mob-components3.svg';
 
 import HeaderText from "../components/HeaderText.vue";
 import LabelText from "../components/LabelText.vue";
+import Footer from "../components/FooterContent.vue";
 export default {
     data() {
       return {
@@ -101,7 +104,7 @@ export default {
       window.removeEventListener('touchmove', this.touchHandler);
     },
     
-    components: { HeaderText, LabelText },
+    components: { HeaderText, LabelText, Footer },
     methods:{
       showComponentsAnimation() {
         let index = 0;
@@ -329,7 +332,6 @@ export default {
   .components{
     padding: 12px;
     padding-top: 54px;
-    overflow-x: hidden;
   }
   .head{
     display: flex;
