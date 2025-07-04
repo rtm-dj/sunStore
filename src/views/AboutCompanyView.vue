@@ -46,7 +46,7 @@
                                 <h1>50 мл</h1>
                                 <p>Больше объема для<br>длительного ухода!</p>
                             </div>
-                            <img src="../assets/photo.png" alt="">
+                            <img src="../assets/big.png" alt="">
                         </div>
                         <div class="divider"></div>
                         <div class="size-item" style="align-items: start;">
@@ -54,7 +54,7 @@
                                 <h1>30 мл</h1>
                                 <p>Компактно и удобно —<br>всегда под рукой!</p>
                             </div>
-                            <img src="../assets/photo.png" alt="">
+                            <img src="../assets/small.png" alt="">
                         </div>
                     </div>
                 </div>
