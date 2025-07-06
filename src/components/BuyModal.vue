@@ -1,12 +1,12 @@
 <template>
   <section class="modal" v-if="isOpen">
-    <div class="overlay" @click.self="close"></div>
     <div 
       class="modal-wrapper" 
       ref="block_first"
       :class="{ 'block-show': blocksVisible[0] }"
     >
-      <svg 
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative;">
+        <svg 
         @click="close" 
         class="cancel" 
         width="14" 
@@ -14,9 +14,11 @@
         viewBox="0 0 14 14" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M8.46 7L14 12.54V14H12.54L7 8.46L1.46 14H0V12.54L5.54 7L0 1.46V0H1.46L7 5.54L12.54 0H14V1.46L8.46 7Z" fill="#262B2D"/>
-      </svg>
+        >
+          <path d="M8.46 7L14 12.54V14H12.54L7 8.46L1.46 14H0V12.54L5.54 7L0 1.46V0H1.46L7 5.54L12.54 0H14V1.46L8.46 7Z" fill="#262B2D"/>
+        </svg>
+        <p class="label">Купить на маркетплэйсах:</p>
+      </div>
       <div class="links">
         <a 
           ref="block_second" 
@@ -29,13 +31,13 @@
           class="link" 
           href="https://www.wildberries.ru/"
           :class="{ 'block-show': blocksVisible[2] }"
-        >Wildberries</a>
+        >WB</a>
         <a 
           ref="block_fourth" 
           class="link" 
           href="https://www.wildberries.ru/"
           :class="{ 'block-show': blocksVisible[3] }"
-        >Маркет</a>
+        >Я.Маркет</a>
       </div>
     </div>
   </section>
@@ -92,11 +94,6 @@ watch(() => props.isOpen, (newVal) => {
     scale: 1 !important;
     opacity: 1 !important;
 }
-.overlay{
-  height: 100vh;
-  width: 100vw;
-  background-color: #00000061;
-}
 .modal{
   position: absolute;
   top: 0;
@@ -104,37 +101,45 @@ watch(() => props.isOpen, (newVal) => {
 }
 
 .modal-wrapper{
+  position: relative;
+  background-color: #fffdef56;
+  backdrop-filter: blur(5px);
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  margin: auto;
-  width: 450px;
-  height: 300px;
-  padding: 25px;
-  position: absolute;
-  background-color: #fffdef56;
-  border-radius: 20px;
-  border: 1px solid #FFFDEF;
-  backdrop-filter: blur(20px);
-  opacity: 0;
-  scale: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
 }
 
 .cancel{
   width: 20px;
   aspect-ratio: 1;
   cursor: pointer;
+  position: absolute;
+  left: 35vw;
+}
+
+.label{
+  color: #262B2D;
+  font-size: 20px;
+  margin: 0;
+  width: fit-content;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 10px 20px;
+  background-color: #F0EDE0;
 }
 
 .links{
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  height: 90%;
-  gap: 12px;
+  gap: 50px;
 }
 
 .link:hover{
@@ -142,14 +147,14 @@ watch(() => props.isOpen, (newVal) => {
 }
 
 .link{
-  background-color: #FFFDEF;
-  width: 350px;
-  height: 46px;
-  color: #262B2D;
+  background-color: #8f8f76d4;
+  width: 130px;
+  height: 114px;
+  color: #FFFFFF;
   font-size: 20px;
   text-align: center;
   border: none;
-  border-radius: 23px;
+  border-radius: 30px;
   font-family: 'Montserrat Alternates';
   font-weight: 500;
   transition: all .2s ease;
@@ -162,30 +167,29 @@ watch(() => props.isOpen, (newVal) => {
 }
 @media (max-width: 768px){
   .modal-wrapper{
+    position: relative;
+    background-color: #fffdef56;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    margin: auto;
-    width: 300px;
-    height: 180px;
-    padding: 25px;
-    position: absolute;
-    background-color: #fffdef56;
-    border-radius: 20px;
-    border: 1px solid #FFFDEF;
-    backdrop-filter: blur(20px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
   }
   .link{
-    background-color: #FFFDEF;
-    width: 204px;
-    height: 36px;
-    color: #262B2D;
+    background-color: #8f8f76d4;
+    width: 130px;
+    height: 114px;
+    color: #FFFFFF;
     font-size: 20px;
     text-align: center;
     border: none;
-    border-radius: 23px;
+    border-radius: 30px;
     font-family: 'Montserrat Alternates';
     font-weight: 500;
     transition: all .2s ease;
@@ -193,6 +197,23 @@ watch(() => props.isOpen, (newVal) => {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    scale: 0;
+  }
+  .links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .cancel{
+    width: 20px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: absolute;
+    top: -5vh;
+    left: 20px;
   }
 }
 </style>
