@@ -181,6 +181,9 @@ export default {
 </script>
 
 <style scoped>
+.head{
+    display: none;
+}
 *{
   /* transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940); */
   transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
@@ -197,6 +200,7 @@ export default {
 }
 .components{
   padding: 56px;
+  padding-top: 100px;
   padding-right: 150px;
 }
 

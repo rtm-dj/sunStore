@@ -1,6 +1,7 @@
 <template>
     <div class="head">
         <BurgerMenu id="burger"/>
+        <HeaderText :title="'о компании'"/>
     </div>
     <div class="aboutpage">
         <div class="company">
@@ -86,6 +87,9 @@ export default {
 </script>
 
 <style scoped>
+.head{
+    display: none;
+}
 .size-item img{
     height: 390px;
     width: 330px;

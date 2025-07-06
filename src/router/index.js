@@ -22,11 +22,11 @@ const router = createRouter({
       name: 'about',
       component: AboutView
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/buy',
+      name: 'buy',
+      component: () => import('../views/BuyView.vue')
+    }
   ]
 })
 

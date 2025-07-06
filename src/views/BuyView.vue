@@ -1,29 +1,31 @@
 <template>
     <section class="buy">
-        <img src="../assets/photo.png" alt="" class="photo" ref="block_first">
-        <div class="about">
-            <div class="about-wrapper">
-                <h3>Два вида фасовки 50 и 30 мл, компактный размер, точечное нанесение – экономный расход</h3>
-                <div class="about-blocks">
-                    <div class="block" ref="block_second">
-                        <h1 class="ml">50<span>мл</span></h1>
-                        <p class="subtitle">Больше объема для<br>длительного ухода!</p>
-                    </div>
-                    <div class="block" ref="block_third">
-                        <h1 class="ml">30<span>мл</span></h1>
-                        <p class="subtitle">Компактно и удобно —<br>всегда под рукой!</p>
-                    </div>
-                </div>
+        <div class="head">
+          <BurgerMenu id="burger"/>
+          <HeaderText :title="'компоненты'"/>
+        </div>
+        <div class="title">
+            <LabelText :title="'Два вида фасовки 50 и 30 мл, компактный размер, точечное нанесение – экономный расход'"/>
+        </div>
+        <div class="buy-items">
+            <div class="item">
+                <img src="../assets/big.png" alt="">
+                <p class="mililitres">50 мл</p>
             </div>
-            <div class="buy-buttons">
-
+            <div class="item">
+                <img src="../assets/small.png" alt="">
+                <p class="mililitres">30 мл</p>
             </div>
         </div>
     </section>
+    <Footer/>
 </template>
 
 <script>
+import LabelText from "../components/LabelText.vue";
+import Footer from "../components/FooterContent.vue";
 export default {
+    components: { LabelText, Footer },
     async mounted() {
         this.showComponentsAnimation();
     },
@@ -34,10 +36,6 @@ export default {
                 this.$refs.block_first,
                 this.$refs.block_second,
                 this.$refs.block_third,
-                this.$refs.block_fourth,
-                this.$refs.block_fifth,
-                this.$refs.block_sixth,
-                this.$refs.block_seventh,
             ];
 
             const interval = setInterval(() => {
@@ -59,10 +57,6 @@ export default {
                 this.$refs.block_first,
                 this.$refs.block_second,
                 this.$refs.block_third,
-                this.$refs.block_fourth,
-                this.$refs.block_fifth,
-                this.$refs.block_sixth,
-                this.$refs.block_seventh,
             ];
 
             const interval = setInterval(() => {
@@ -82,137 +76,52 @@ export default {
 </script>
 
 <style scoped>
-*{
-  transition: all .7s ease;
-}
-.block-show{
-    scale: 1 !important;
-    opacity: 1 !important;
-}
-.photo{
-    height: 91vh;
-    width: 50%;
-    background-color:blue;
-    border-radius: 50px;
-    object-fit: cover;
-    scale: 0;
-    opacity: 0;
-}
-.buy{
+.buy-items{
     display: flex;
-    gap: 18px;
-    padding: 18px;
-    padding-top: 90px;
+    gap: 20px;
 }
-.about{
-    height: 91vh;
-    width: 50%;
+.item:hover{
+    cursor: pointer;
+    filter: brightness(90%);
 }
-
-.about-wrapper{
+.item{
+    border: 1px solid #8F8F76;
+    border-radius: 20px;
     background-color: #F0EDE0;
-    border-radius: 50px;
-    height: 60vh;
-    margin-bottom: 1vh;
+    overflow: hidden;
+    height: 40vh;
+    width: 15vw;
+}
+.item img{
+    border-bottom: 1px solid #8F8F76;
+    height: 36vh;
+    width: 100%;
+    object-fit: cover;
+}
+.mililitres{
+    margin: 0;
+    color: #262B2D;
+    font-size: 1vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  
+    align-items: center;
+    justify-content: center;
 }
-
-.buy-buttons{
-    background-color: #8F8F76;
-    border-radius: 50px;
-    height: 30vh;
-}
-.about-blocks{
+.buy{
+    width: 100%;
     display: flex;
-    padding: 25px;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+    gap: 70px;
+    min-height: 80vh;
 }
-.ml{
-    font-size: 180px;
-    font-weight: 500;
+.head{
+    display: none;
 }
-span{
-    font-size: 80px;
-    font-weight: 500;
-}
-.block{
-    background-color: #FFFDEF;
-    border-radius: 25px;
-    width: 49%;
-    height: 100%;
-    color: #262B2D;
-    text-align: center;
-    scale: 0;
-    opacity: 0;
-}
-.subtitle{
-    font-size: 20px;
-    font-weight: 500;
-    color: #ACABA4;
-    text-align: center;
-}
-h3{
-    font-size: 24px;
-    font-weight: 500;
-    color: #262B2D;
-    text-align: center;
-    margin: 0 50px 0 50px;
-    padding-top: 50px;
-}
-@media (min-width: 768px) and (max-width: 1800px){
-    .ml{
-        font-size: 70px;
-        margin: 40px 0;
-        font-weight: 500;
-    }
-    span{
-        font-size: 30px;
-        font-weight: 500;
-    }
-    .subtitle{
-        font-size: 14px;
-        font-weight: 500;
-        color: #ACABA4;
-        text-align: center;
-    }
-    h3{
-        font-size: 16px;
-        font-weight: 500;
-        color: #262B2D;
-        text-align: center;
-        margin: 0 50px 0 50px;
-        padding-top: 50px;
-    }
-    .photo{
-        height: 85vh;
-        width: 50%;
-        background-color:blue;
-        border-radius: 50px;
-        object-fit: cover;
-        scale: 0;
-        opacity: 0;
-    }
-
-    .about{
-        height: 85vh;
-        width: 50%;
-    }
-    .about-wrapper{
-        background-color: #F0EDE0;
-        border-radius: 50px;
-        height: 50vh;
-        margin-bottom: 1vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;  
-    }
-
-    .buy-buttons{
-        background-color: #8F8F76;
-        border-radius: 50px;
-        height: 34vh;
-    }
+*{
+  /* transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940); */
+  transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
 }
 </style>
