@@ -1,18 +1,18 @@
 <template>
+     <div class="head">
+        <BurgerMenu id="burger"/>
+        <HeaderText :title="'купить'"/>
+    </div>
     <section class="buy">
-        <div class="head">
-          <BurgerMenu id="burger"/>
-          <HeaderText :title="'компоненты'"/>
-        </div>
         <div class="title">
             <LabelText :title="'Два вида фасовки 50 и 30 мл, компактный размер, точечное нанесение – экономный расход'"/>
         </div>
         <div class="buy-items">
-            <div class="item">
+            <div class="item" @click="openLink('big')">
                 <img src="../assets/big.png" alt="">
                 <p class="mililitres">50 мл</p>
             </div>
-            <div class="item">
+            <div class="item" @click="openLink('small')">
                 <img src="../assets/small.png" alt="">
                 <p class="mililitres">30 мл</p>
             </div>
@@ -24,12 +24,21 @@
 <script>
 import LabelText from "../components/LabelText.vue";
 import Footer from "../components/FooterContent.vue";
+import HeaderText from "../components/HeaderText.vue";
 export default {
-    components: { LabelText, Footer },
+    components: { LabelText, Footer, HeaderText },
     async mounted() {
         this.showComponentsAnimation();
     },
     methods:{
+        openLink(type) {
+            if (type == 'big') {
+                window.open('https://www.ozon.ru/product/krem-gel-balzam-posle-ukusov-nasekomyh-50-ml-2074229992/', '_blank');
+            } else {
+                window.open('https://www.ozon.ru/product/krem-gel-balzam-posle-ukusov-nasekomyh-30-ml-2074361875/', '_blank');
+            }
+            
+        },
         showComponentsAnimation() {
             let index = 0;
             const blocks = [
@@ -123,5 +132,36 @@ export default {
 *{
   /* transition: all .7s cubic-bezier(0.560, 1.555, 0.305, 0.940); */
   transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
+}
+@media (max-width: 768px){
+    .head{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        /* position: fixed; */
+        background-color: #FFFDEF;
+        margin-top: 54px;
+        margin-left: 12px;
+    }
+    .buy-items{
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .item:hover{
+        cursor: pointer;
+        filter: brightness(100%);
+    }
+    .item{
+        width: 100%;
+    }
+    .buy{
+        min-height: 20vh;
+        margin-bottom: 30px;
+    }
+    .mililitres{
+        font-size: 20px;
+    }
 }
 </style>

@@ -23,10 +23,11 @@
         <a 
           ref="block_second" 
           class="link" 
-          href="https://www.ozon.ru/"
+          href="https://www.ozon.ru/product/krem-gel-balzam-posle-ukusov-nasekomyh-50-ml-2074229992/"
           :class="{ 'block-show': blocksVisible[1] }"
+          target="_blank"
         >Ozon</a>
-        <a 
+        <!-- <a 
           ref="block_third" 
           class="link" 
           href="https://www.wildberries.ru/"
@@ -37,7 +38,7 @@
           class="link" 
           href="https://www.wildberries.ru/"
           :class="{ 'block-show': blocksVisible[3] }"
-        >Я.Маркет</a>
+        >Я.Маркет</a> -->
       </div>
     </div>
   </section>
