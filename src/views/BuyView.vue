@@ -165,8 +165,9 @@ export default {
         font-size: 20px;
     }
     .item img{
+        margin-top: 20px;
         width: 100%;
-        object-fit: fill;
+        object-fit: cover;
     }
 }
 </style>

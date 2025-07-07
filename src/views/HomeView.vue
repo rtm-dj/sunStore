@@ -339,8 +339,10 @@ export default {
   position: absolute;
   z-index: 2;
   height: 100vh;
+  margin: -10px 0;
   width: 30vw;
   left: 30%;
+  clip-path: inset(5px 0 0 0);
 }
 
 @media (max-width: 768px){
