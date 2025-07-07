@@ -9,11 +9,11 @@
         </div>
         <div class="buy-items">
             <div class="item" @click="openLink('big')">
-                <img src="../assets/big.png" alt="">
+                <img src="../assets/big-empty.png" alt="">
                 <p class="mililitres">50 мл</p>
             </div>
             <div class="item" @click="openLink('small')">
-                <img src="../assets/small.png" alt="">
+                <img src="../assets/small-empty.png" alt="">
                 <p class="mililitres">30 мл</p>
             </div>
         </div>
