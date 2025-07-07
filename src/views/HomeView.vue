@@ -346,6 +346,13 @@ export default {
 }
 
 @media (max-width: 768px){
+  .curvedText{
+    width: 300%;
+    position: absolute;
+    transform: translateX(-30%) translateY(40%);
+    bottom: 0;
+    opacity: 1;
+  }
   .banner{
     display: block;
     position: relative;

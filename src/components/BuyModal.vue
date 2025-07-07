@@ -148,7 +148,7 @@ watch(() => props.isOpen, (newVal) => {
 }
 
 .link{
-  background-color: #8f8f76d4;
+  background-color: #8f8f76;
   width: 130px;
   height: 114px;
   color: #FFFFFF;
