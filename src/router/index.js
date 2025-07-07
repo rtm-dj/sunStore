@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
 import HomeView from '../views/HomeView.vue'
 import ComponentsView from '../views/ComponentsView.vue'
 import AboutView from '../views/AboutCompanyView.vue'
@@ -27,7 +26,10 @@ const router = createRouter({
       name: 'buy',
       component: () => import('../views/BuyView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router
