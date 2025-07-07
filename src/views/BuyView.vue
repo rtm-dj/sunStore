@@ -5,7 +5,7 @@
     </div>
     <section class="buy">
         <div class="title">
-            <LabelText :title="'Два вида фасовки 50 и 30 мл, компактный размер, точечное нанесение – экономный расход'"/>
+            <LabelText :width="450" :title="'Два вида фасовки 50 и 30 мл, компактный размер, точечное нанесение – экономный расход'"/>
         </div>
         <div class="buy-items">
             <div class="item" @click="openLink('big')">
@@ -155,6 +155,7 @@ export default {
     }
     .item{
         width: 100%;
+        height: fit-content;
     }
     .buy{
         min-height: 20vh;
@@ -162,6 +163,10 @@ export default {
     }
     .mililitres{
         font-size: 20px;
+    }
+    .item img{
+        width: 100%;
+        object-fit: fill;
     }
 }
 </style>

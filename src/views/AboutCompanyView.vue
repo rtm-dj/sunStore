@@ -150,7 +150,6 @@ export default {
     cursor: pointer;
 }
 #download{
-    height: 34px;
     padding: 10px 28px;
     background-color: #FFFDEF;
     color: #512D38;
@@ -258,6 +257,9 @@ span{
         border-radius: 24px;
         height: fit-content;
         width: 35vw;
+    }
+    .green-block h1{
+        margin-bottom: 10px;
     }
     .consist p{
         width: 90% !important;

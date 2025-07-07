@@ -5,7 +5,7 @@
       ref="block_first"
       :class="{ 'block-show': blocksVisible[0] }"
     >
-      <div style="width: 100%; display: flex; justify-content: center; align-items: center; position: relative;">
+      <div class="modal-content">
         <svg 
         @click="close" 
         class="cancel" 
@@ -166,7 +166,23 @@ watch(() => props.isOpen, (newVal) => {
   opacity: 0;
   scale: 0;
 }
+.modal-content{
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 @media (max-width: 768px){
+  .modal-content{
+    margin-top: -20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
   .modal-wrapper{
     position: relative;
     background-color: #fffdef56;

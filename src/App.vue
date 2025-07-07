@@ -71,6 +71,7 @@ body{
 }
 
 #nprogress .spinner-icon {
+  display: none;
   width: 18px;
   height: 18px;
   box-sizing: border-box;

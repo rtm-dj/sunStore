@@ -113,6 +113,7 @@ export default {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    margin-top: 60%;
 }
 .section{
     background-color: #8F8F76;
@@ -139,15 +140,14 @@ button{
     position: relative;
     background-color: #fffdef56;
     backdrop-filter: blur(5px);
-    height: 100vh;
-    width: 100vw;
+    height: 100svh;
+    width: 100svw;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 .icon{
     display: flex;
