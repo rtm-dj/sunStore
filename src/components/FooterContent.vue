@@ -11,7 +11,6 @@
         </div>
         <div class="bottomContent">
             <p>2025 © Кладовая солнца</p>
-            <p>{{ 'Language' }}</p>
         </div>
     </div>
 </template>
@@ -27,7 +26,7 @@ export default {
     display: flex;
     font-size: 16px;
     color: #FFFDEF;
-    justify-content: space-between;
+    justify-content: center;
     width: 90%;
     align-items: center;
 }

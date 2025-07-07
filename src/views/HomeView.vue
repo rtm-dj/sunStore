@@ -4,7 +4,7 @@
     <section class="banner">
       <div class="left-part">
         <div class="language">
-          <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button>
+          <!-- <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button> -->
         </div>
         <img src="../assets/logo.png" alt="" class="logotype" ref="block_first">
         <div class="bottom-action" ref="block_third">
@@ -29,12 +29,12 @@
         @touchmove.stop="preventScroll"
         max-camera-orbit="60deg"></model-viewer>
         <img src="../assets/curvedText_1.svg" alt="" class="curvedText" ref="block_sixth">
-        <div class="scrolldown" ref="block_fourth">
+        <!-- <div class="scrolldown" ref="block_fourth">
           <div class="icon-container">
             <img class="icon" src="../assets/scroll.svg" alt="">
           </div>
           <p class="scroll-text">Листай</p>
-        </div>
+        </div> -->
         <div class="text-header">
           <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение</h1>
           <img src="../assets/blob1.svg" alt="" class="blob" ref="block_fifth">
