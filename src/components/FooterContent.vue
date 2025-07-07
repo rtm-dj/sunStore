@@ -7,7 +7,7 @@
             <p @click="this.$router.push('/')">Главная</p>
             <p @click="this.$router.push('/components')">Компоненты</p>
             <p @click="this.$router.push('/about')">О компании</p>
-            <p>Купить</p>
+            <p @click="this.$router.push('/buy')">Купить</p>
         </div>
         <div class="bottomContent">
             <p>2025 © Кладовая солнца</p>

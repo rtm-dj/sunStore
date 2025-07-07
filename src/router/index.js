@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ComponentsView from '../views/ComponentsView.vue'
 import AboutView from '../views/AboutCompanyView.vue'
 
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,5 +34,18 @@ const router = createRouter({
     return { top: 0 }
   }
 })
+
+router.beforeEach((to, from, next) => {
+  NProgress.start();
+  NProgress.configure({ easing: 'ease', speed: 400 });
+  NProgress.configure({ showSpinner: false });
+  setTimeout(() => {
+    next();
+  }, 300)
+});
+
+router.afterEach(() => {
+  NProgress.done();
+});
 
 export default router

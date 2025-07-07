@@ -25,7 +25,7 @@
             <div class="certificate" v-if="article == 1">
                 <p>Здесь представлена ссылка на сертификат качества нашего продукта.</p>
                 <div style="width: 100%; text-align: center;">
-                    <button id="download">Скачать</button>
+                    <button id="download" @click="openCertificate()">Открыть</button>
                 </div>
             </div>
             <div class="instruction" v-else-if="article == 2">
@@ -81,6 +81,18 @@ export default {
     data(){
         return{
             article: null,
+        }
+    },
+    methods: {
+        openCertificate() {
+            import('../assets/certificate.pdf')
+            .then(pdfModule => {
+                const pdfUrl = pdfModule.default;
+                window.open(pdfUrl, '_blank');
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки PDF:', error);
+            });
         }
     }
 }

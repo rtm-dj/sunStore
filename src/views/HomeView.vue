@@ -3,7 +3,7 @@
     <Modal :isOpen="modal" @close="modal = false"></Modal>
     <section class="banner">
       <div class="left-part">
-        <div class="language">
+        <div class="language" style="width: 46px; height: 46px;">
           <!-- <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button> -->
         </div>
         <img src="../assets/logo.png" alt="" class="logotype" ref="block_first">
