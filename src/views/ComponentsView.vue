@@ -5,6 +5,7 @@
           <HeaderText :title="'компоненты'"/>
         </div>
         <div class="components-wrapper">
+          <img src="../assets/curvedText_1.svg" alt="" class="curvedText">
           <div class="components-left-part" v-if="slider == 1"> 
               <img :src="webComponents1" alt="" ref="block_third">
               <LabelText :title="'травы, согретые солнцем и напоенные дождем, передают свою энергию'" id="labelText1"/>
@@ -43,7 +44,6 @@
         </div>
     </section>
     <Footer/>
-    
 </template>
 
 <script>
@@ -181,6 +181,12 @@ export default {
 </script>
 
 <style scoped>
+.curvedText{
+  width: 80%;
+  position: absolute;
+  opacity: 1;
+  transform: rotate(-80deg) translateY(80%);
+}
 .head{
     display: none;
 }
@@ -202,6 +208,8 @@ export default {
   padding: 56px;
   padding-top: 100px;
   padding-right: 150px;
+  overflow: hidden;
+  position: relative;
 }
 
 .components-wrapper{
