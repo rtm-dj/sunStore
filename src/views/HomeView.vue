@@ -438,6 +438,7 @@ export default {
     align-items: center;
     scale: 0;
     opacity: 0;
+    z-index: 1;
   }
   .buy{
     background-color: #8F8F76;

@@ -158,7 +158,7 @@ export default {
         height: fit-content;
     }
     .buy{
-        min-height: 20vh;
+        min-height: auto;
         margin-bottom: 30px;
     }
     .mililitres{

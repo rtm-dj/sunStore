@@ -182,10 +182,11 @@ export default {
 
 <style scoped>
 .curvedText{
-  width: 80%;
+  width: 140vh;
   position: absolute;
   opacity: 1;
-  transform: rotate(-80deg) translateY(80%);
+  transform: rotate(-80deg) translateY(75%);
+  z-index: 1;
 }
 .head{
     display: none;
@@ -239,6 +240,7 @@ export default {
 .components-left-part{
   position: relative;
   margin-left: 250px;
+  z-index: 10;
 }
 
 .curvedTextComponents{
@@ -277,7 +279,7 @@ export default {
 }
 #labelText2{
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   right: -30px;
 }
 #labelText3{

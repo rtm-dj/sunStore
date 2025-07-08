@@ -9,7 +9,7 @@ const app = createApp(App)
 
 const preloadAssets = async () => {
   try {
-    const assetsContext = import.meta.glob('@/assets/**/*.{jpg,jpeg,png,gif,svg,webp}')
+    const assetsContext = import.meta.glob('@/assets/**/*.{jpg,png,svg}')
     
     for (const path in assetsContext) {
       const image = new Image()
