@@ -168,6 +168,7 @@ export default {
         margin-top: 20px;
         width: 100%;
         object-fit: cover;
+        height: auto;
     }
 }
 </style>
