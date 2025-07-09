@@ -58,7 +58,22 @@ import mobComponents3 from '../assets/mob-components3.svg';
 import HeaderText from "../components/HeaderText.vue";
 import LabelText from "../components/LabelText.vue";
 import Footer from "../components/FooterContent.vue";
+
+import { useHead } from '@vueuse/head'
 export default {
+    setup() {
+        useHead({
+        title: 'Кладовая Солнца | Компоненты',
+        meta: [
+            { name: 'description', content: 'Быстро снимает воспаление, отёк, зуд и раздражение' },
+            { property: 'og:title', content: 'Бальзам после укусов' },
+            { property: 'og:image', content: 'https://kladovayasun.ru/assets/photo-DmOUKuX9.png' }
+        ],
+        link: [
+            { rel: 'canonical', href: 'https://kladovayasun.ru' }
+        ]
+        })
+    },
     data() {
       return {
         startY: 0,

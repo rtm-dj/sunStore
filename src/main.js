@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createHead } from '@vueuse/head'
 import App from './App.vue'
 import router from './router'
 
@@ -6,6 +7,7 @@ import Modal from "@/components/BuyModal.vue"
 import BurgerMenu from "@/components/BurgerMenu.vue"
 
 const app = createApp(App)
+const head = createHead()
 
 const preloadAssets = async () => {
   try {
@@ -21,6 +23,7 @@ const preloadAssets = async () => {
   }
 }
 
+app.use(head)
 app.use(router)
 app.component('Modal', Modal)
 app.component('BurgerMenu', BurgerMenu)

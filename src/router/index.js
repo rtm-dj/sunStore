@@ -1,7 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ComponentsView from '../views/ComponentsView.vue'
-import AboutView from '../views/AboutCompanyView.vue'
 
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -12,17 +9,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('../views/HomeView.vue')
     },
     {
       path: '/components',
       name: 'components',
-      component: ComponentsView
+      component: () => import('../views/ComponentsView.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: () => import('../views/AboutCompanyView.vue')
     },
     {
       path: '/buy',

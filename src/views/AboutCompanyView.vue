@@ -76,7 +76,22 @@
 import HeaderText from "../components/HeaderText.vue";
 import Footer from "../components/FooterContent.vue";
 import LabelText from "../components/LabelText.vue";
+
+import { useHead } from '@vueuse/head'
 export default {
+    setup() {
+        useHead({
+        title: 'Кладовая Солнца | О компании',
+        meta: [
+            { name: 'description', content: 'Быстро снимает воспаление, отёк, зуд и раздражение' },
+            { property: 'og:title', content: 'Бальзам после укусов' },
+            { property: 'og:image', content: 'https://kladovayasun.ru/assets/photo-DmOUKuX9.png' }
+        ],
+        link: [
+            { rel: 'canonical', href: 'https://kladovayasun.ru' }
+        ]
+        })
+    },
     components: { HeaderText, Footer, LabelText },
     data(){
         return{
