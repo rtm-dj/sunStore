@@ -41,12 +41,13 @@
         </div>
       </div>
     </section>
-
+    <Footer/>
     
   </div>
 </template>
 
 <script>
+import Footer from "../components/FooterContent.vue";
 import { useHead } from '@vueuse/head'
 export default {
   setup() {
@@ -62,6 +63,7 @@ export default {
       ]
     })
   },
+  components: {Footer},
   data() {
     return {
       language: 'ru',
@@ -191,7 +193,6 @@ export default {
     opacity: 1 !important;
 }
 .page {
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 .icon-container{

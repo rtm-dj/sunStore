@@ -142,7 +142,7 @@ button{
     backdrop-filter: blur(5px);
     height: 100svh;
     width: 100svw;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;

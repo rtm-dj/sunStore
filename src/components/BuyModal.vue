@@ -96,7 +96,7 @@ watch(() => props.isOpen, (newVal) => {
     opacity: 1 !important;
 }
 .modal{
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
