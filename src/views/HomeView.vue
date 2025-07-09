@@ -6,7 +6,7 @@
         <div class="language" style="width: 46px; height: 46px;">
           <!-- <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button> -->
         </div>
-        <img src="../assets/logo.png" alt="" class="logotype" ref="block_first">
+        <img src="../assets/logo.png" alt="logo" class="logotype" ref="block_first">
         <div class="bottom-action" ref="block_third">
           <span class="copyright">2025 © кладовая солнца</span>
           <button class="buy" @click="modal = true">Купить</button>
@@ -37,7 +37,7 @@
         </div> -->
         <div class="text-header">
           <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение</h1>
-          <img src="../assets/blob1.svg" alt="" class="blob" ref="block_fifth">
+          <img src="../assets/blob1.svg" alt="blob" class="blob" ref="block_fifth">
         </div>
       </div>
     </section>

@@ -26,11 +26,11 @@
 
               <div class="sliderNavigation">
                 <div class="sliderArrow" @click="slider != 1 ? slider-- : slider = 3">
-                  <img src="../assets/sliderArrowLeft.svg" alt="">
+                  <img src="../assets/sliderArrowLeft.svg" alt="left">
                 </div>
                 <div class="counter">{{ slider + '/3' }}</div>
                 <div class="sliderArrow" @click="slider != 3 ? slider++ : slider = 1">
-                  <img src="../assets/sliderArrowRight.svg" alt="">
+                  <img src="../assets/sliderArrowRight.svg" alt="right">
                 </div>
               </div>
           </div>

@@ -6,7 +6,7 @@
     <div class="aboutpage">
         <div class="company">
             <div class="bigLogo">
-                <img src="../assets/logo.png" alt="" class="logo">
+                <img src="../assets/logo.png" alt="logo" class="logo">
                 <h1>ИП Токмачева Е. Н.</h1>
                 <div class="info">
                     <p>Карамышевская набережная, д. 22А</p>
@@ -31,7 +31,7 @@
             <div class="instruction" v-else-if="article == 2">
                 <p><span>Способ применения:</span> Нанесите небольшое количество крема в<br>месте укуса. Повторять по мере необходимости.</p>
                 <div style="width: 100%; text-align: center;">
-                    <img src="../assets/photo.png" alt="">
+                    <img src="../assets/photo.png" alt="cream">
                 </div>
                 <p><span>Меры предосторожности:</span> Возможна индивидуальная непереносимость ингредиентов, входящих в крем. Избегать попадания в глаза.</p>
                 <p><span>Условия хранения:</span> Хранить при температуре от +5 до +250С.</p>
@@ -47,7 +47,7 @@
                                 <h1>50 мл</h1>
                                 <p>Больше объема для<br>длительного ухода!</p>
                             </div>
-                            <img src="../assets/big.png" alt="">
+                            <img src="../assets/big.png" alt="big_cream">
                         </div>
                         <div class="divider"></div>
                         <div class="size-item" style="align-items: start;">
@@ -55,7 +55,7 @@
                                 <h1>30 мл</h1>
                                 <p>Компактно и удобно —<br>всегда под рукой!</p>
                             </div>
-                            <img src="../assets/small.png" alt="">
+                            <img src="../assets/small.png" alt="small_cream">
                         </div>
                     </div>
                 </div>

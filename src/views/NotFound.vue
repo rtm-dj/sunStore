@@ -1,10 +1,10 @@
 <template>
     <div class="notFound">
-        <img src="../assets/logo.png" alt="" class="logo">
+        <img src="../assets/logo.png" alt="logo" class="logo">
         <div class="subtitle">
             Ooops🥺<br>Кажется, такой страницы у нас нет
         </div>
-        <img src="../assets/rabbit.png" alt="" class="rabbit">
+        <img src="../assets/rabbit.png" alt="rabbit" class="rabbit">
     </div>
 </template>
 
