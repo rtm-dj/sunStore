@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div class="smallLogo">
-            <img src="../assets/logo-white.png" alt="">
+            <img src="/logo-white.png" alt="">
         </div>
         <div class="menuItems">
             <p @click="this.$router.push('/')">Главная</p>
@@ -10,7 +10,7 @@
             <p @click="this.$router.push('/buy')">Купить</p>
         </div>
         <div class="bottomContent">
-            <p>2025 © Кладовая солнца</p>
+            <p>2023 - {{ new Date().getFullYear() }} © Кладовая солнца</p>
         </div>
     </div>
 </template>

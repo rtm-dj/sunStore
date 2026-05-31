@@ -1,29 +1,51 @@
-# sunStore
+# sunStore — Кладовая Солнца
 
-This template should help get you started developing with Vue 3 in Vite.
+Сайт бренда натуральной косметики «Кладовая Солнца». Построен на **Nuxt 3** (Vue 3, SPA-режим).
 
-## Recommended IDE Setup
+## Структура проекта
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+```
+├── app.vue           # Корневой layout (NavBar + страницы)
+├── nuxt.config.ts    # Конфигурация Nuxt
+├── pages/            # Маршруты (file-based routing)
+│   ├── index.vue     # /
+│   ├── components.vue
+│   ├── about.vue
+│   ├── buy.vue
+│   └── [...slug].vue # 404
+├── components/       # Vue-компоненты (auto-import)
+├── assets/         # Ассеты для import в script
+├── public/           # Статические файлы (картинки, svg, glb, pdf)
+└── plugins/          # NProgress, preload ассетов
+```
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Установка
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Разработка
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Приложение будет доступно на `http://localhost:3000`.
+
+## Сборка для production
 
 ```sh
 npm run build
 ```
+
+Результат — статический SPA в папке `.output/public` (подходит для GitHub Pages и nginx).
+
+## Деплой
+
+- **GitHub Pages**: workflow в `.github/workflows/deploy.yml` собирает и публикует `.output/public`
+- **nginx**: конфиг в `nginx.conf` (SPA fallback на `index.html`)
+
+## Статические файлы
+
+PNG, GLB, PDF и другие бинарные файлы (logo.png, test.glb, certificate.pdf и т.д.) нужно положить в папку `public/`.

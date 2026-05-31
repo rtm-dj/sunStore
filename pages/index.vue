@@ -1,54 +1,42 @@
 <template>
   <div class="page">
-    <Modal :isOpen="modal" @close="modal = false"></Modal>
+    <BuyModal :isOpen="modal" @close="modal = false" />
     <section class="banner">
       <div class="left-part">
-        <div class="language" style="width: 46px; height: 46px;">
-          <!-- <button class="lang" @click="language == 'ru' ? language = 'en' : language = 'ru'">{{ language }}</button> -->
-        </div>
-        <img src="../assets/logo.png" alt="logo" class="logotype" ref="block_first">
+        <div class="language" style="width: 46px; height: 46px;"></div>
+        <img src="/logo.png" alt="logo" class="logotype" ref="block_first">
         <div class="bottom-action" ref="block_third">
-          <span class="copyright">2025 © кладовая солнца</span>
+          <span class="copyright">2023 - {{ new Date().getFullYear() }} © кладовая солнца</span>
           <button class="buy" @click="modal = true">Купить</button>
         </div>
-
-        <BurgerMenu class="burger" style="margin-left: 20px;"/>
-        
+        <BurgerMenu class="burger" style="margin-left: 20px;" />
       </div>
       <div class="right-part">
         <model-viewer class="model"
-        ref="block_seventh"
-        :src="modelSrc"
-        camera-orbit="0deg 60deg 50deg"
-        disable-tap
-        camera-controls
-        disable-zoom
-        auto-rotate
-        touch-action="pan-y"
-        @wheel.stop="preventScroll"
-        @touchmove.stop="preventScroll"
-        max-camera-orbit="60deg"></model-viewer>
-        <img src="../assets/curvedText_1.svg" alt="" class="curvedText" ref="block_sixth">
-        <!-- <div class="scrolldown" ref="block_fourth">
-          <div class="icon-container">
-            <img class="icon" src="../assets/scroll.svg" alt="">
-          </div>
-          <p class="scroll-text">Листай</p>
-        </div> -->
+          ref="block_seventh"
+          :src="modelSrc"
+          camera-orbit="0deg 60deg 50deg"
+          disable-tap
+          camera-controls
+          disable-zoom
+          auto-rotate
+          touch-action="pan-y"
+          @wheel.stop="preventScroll"
+          @touchmove.stop="preventScroll"
+          max-camera-orbit="60deg"
+        />
+        <img src="/curvedText_1.svg" alt="" class="curvedText" ref="block_sixth">
         <div class="text-header">
           <h1 ref="block_second">быстро<br>снимает<br>воспаление,<br>отёк, зуд и<br>раздражение</h1>
-          <img src="../assets/blob1.svg" alt="blob" class="blob" ref="block_fifth">
+          <img src="/blob1.svg" alt="blob" class="blob" ref="block_fifth">
         </div>
       </div>
     </section>
-    <Footer/>
-    
+    <Footer />
   </div>
 </template>
 
 <script>
-import Footer from "../components/FooterContent.vue";
-import { useHead } from '@vueuse/head'
 export default {
   setup() {
     useHead({
@@ -56,14 +44,14 @@ export default {
       meta: [
         { name: 'description', content: 'Быстро снимает воспаление, отёк, зуд и раздражение' },
         { property: 'og:title', content: 'Бальзам после укусов' },
-        { property: 'og:image', content: 'https://kladovayasun.ru/assets/photo-DmOUKuX9.png' }
+        { property: 'og:image', content: 'https://kladovayasun.ru/assets/photo-DmOUKuX9.png' },
       ],
       link: [
-        { rel: 'canonical', href: 'https://kladovayasun.ru' }
-      ]
+        { rel: 'canonical', href: 'https://kladovayasun.ru' },
+      ],
     })
   },
-  components: {Footer},
+
   data() {
     return {
       language: 'ru',
@@ -71,63 +59,55 @@ export default {
       startY: 0,
       modal: false,
       modelSrc: null,
-    };
+    }
   },
 
   async mounted() {
-    const modelPath = await import('@/assets/test.glb');
-    this.modelSrc = modelPath.default;
-
-    this.showBannerAnimation();
-
-    // this.wheelHandler = this.handleWheel.bind(this);
-    // this.touchHandler = this.handleTouch.bind(this);
-    
-    // window.addEventListener('wheel', this.wheelHandler);
-    // window.addEventListener('touchmove', this.touchHandler);
-
+    this.modelSrc = '/test.glb'
+    this.showBannerAnimation()
   },
 
   beforeUnmount() {
-    window.removeEventListener('wheel', this.wheelHandler);
-    window.removeEventListener('touchmove', this.touchHandler);
+    window.removeEventListener('wheel', this.wheelHandler)
+    window.removeEventListener('touchmove', this.touchHandler)
   },
 
   methods: {
     preventScroll(event) {
-      event.stopPropagation();
+      event.stopPropagation()
     },
+
     handleWheel(event) {
       if (event.deltaY > 0) {
-        this.hideBannerAnimation();
+        this.hideBannerAnimation()
         setTimeout(() => {
-          this.$router.push('/components');
-        }, 800);
+          this.$router.push('/components')
+        }, 800)
       } else {
-        this.showBannerAnimation();
+        this.showBannerAnimation()
       }
     },
 
     handleTouch(event) {
       if (event.touches.length > 0) {
-        const currentY = event.touches[0].clientY;
+        const currentY = event.touches[0].clientY
         if (this.startY === 0) {
-          this.startY = currentY;
+          this.startY = currentY
         }
 
-        if (this.startY - currentY > 50) { 
-          this.hideBannerAnimation();
+        if (this.startY - currentY > 50) {
+          this.hideBannerAnimation()
           setTimeout(() => {
-            this.$router.push('/components');
-          }, 800);
-        } else if (currentY - this.startY > 50) { 
-          this.showBannerAnimation();
+            this.$router.push('/components')
+          }, 800)
+        } else if (currentY - this.startY > 50) {
+          this.showBannerAnimation()
         }
       }
     },
 
     showBannerAnimation() {
-      let index = 0;
+      let index = 0
       const blocks = [
         this.$refs.block_first,
         this.$refs.block_second,
@@ -136,23 +116,23 @@ export default {
         this.$refs.block_fifth,
         this.$refs.block_sixth,
         this.$refs.block_seventh,
-      ];
+      ]
 
       const interval = setInterval(() => {
         if (index < blocks.length) {
-          const block = blocks[index];
+          const block = blocks[index]
           if (block) {
-            block.classList.add('block-show');
+            block.classList.add('block-show')
           }
-          index++;
+          index++
         } else {
-          clearInterval(interval);
+          clearInterval(interval)
         }
-      }, 50);
+      }, 50)
     },
 
     hideBannerAnimation() {
-      let index = 0;
+      let index = 0
       const blocks = [
         this.$refs.block_first,
         this.$refs.block_second,
@@ -161,41 +141,39 @@ export default {
         this.$refs.block_fifth,
         this.$refs.block_sixth,
         this.$refs.block_seventh,
-      ];
+      ]
 
       const interval = setInterval(() => {
         if (index < blocks.length) {
-          const block = blocks[index];
+          const block = blocks[index]
           if (block) {
-            block.classList.remove('block-show');
+            block.classList.remove('block-show')
           }
-          index++;
+          index++
         } else {
-          clearInterval(interval);
+          clearInterval(interval)
         }
-      }, 50);
+      }, 50)
     },
   },
-};
-
+}
 </script>
 
-
 <style scoped>
-*{
+* {
   transition: all .5s cubic-bezier(0.560, 1.555, 0.305, 0.940);
 }
-.burger{
+.burger {
   display: none;
 }
-.block-show{
-    scale: 1 !important;
-    opacity: 1 !important;
+.block-show {
+  scale: 1 !important;
+  opacity: 1 !important;
 }
 .page {
   overflow-x: hidden;
 }
-.icon-container{
+.icon-container {
   border: solid 1px #262B2D;
   border-radius: 50%;
   width: 2.6vw;
@@ -204,48 +182,45 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.icon{
+.icon {
   width: 20px;
 }
-.scroll-text{
+.scroll-text {
   color: #262B2D;
   font-size: 20px;
   font-weight: 500;
-  
 }
-.scrolldown:hover{
+.scrolldown:hover {
   transform: translateY(10px);
 }
-.scrolldown{
+.scrolldown {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
   height: fit-content;
   position: absolute;
-  /* transform: translateX(50%); */
   width: 90%;
   bottom: 50px;
   transition: all .2s ease;
   scale: 0;
   opacity: 0;
 }
-.blob{
+.blob {
   position: absolute;
   right: 0;
   top: 0;
   scale: 1.2;
   opacity: 0;
 }
-.text-header{
+.text-header {
   position: absolute;
   right: -100px;
   top: -80px;
   width: 500px;
   text-align: end;
 }
-
-.text-header h1{
+.text-header h1 {
   color: #262B2D;
   font-size: 60px;
   font-weight: 500;
@@ -255,29 +230,29 @@ export default {
   scale: 0;
   opacity: 0;
 }
-.curvedText{
+.curvedText {
   width: 70%;
   position: absolute;
   transform: translateX(10%);
   bottom: -25vh;
   opacity: 0;
 }
-.right-part{
+.right-part {
   width: 100%;
 }
-.banner{
+.banner {
   display: flex;
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
-
-.language{
+.language {
   display: flex;
   width: 100%;
   justify-content: right;
+  margin-top: 50px;
 }
-.lang{
+.lang {
   background: none;
   font-family: 'Montserrat Alternates';
   border: none;
@@ -290,23 +265,19 @@ export default {
   padding: 0;
   transition: all .2s ease;
 }
-.lang:hover{
+.lang:hover {
   cursor: pointer;
   border: 1px solid #262B2D;
-  accent-color: none;
   box-sizing: border-box;
 }
-.copyright{
+.copyright {
   color: #262B2D;
   font-size: 20px;
   text-align: center;
   font-weight: 500;
   margin-bottom: 10px;
 }
-.language{
-  margin-top: 50px;
-}
-.buy{
+.buy {
   background-color: #8F8F76;
   width: 400px;
   height: 60px;
@@ -318,11 +289,11 @@ export default {
   transition: all .2s ease;
   margin-bottom: 50px;
 }
-.buy:hover{
+.buy:hover {
   cursor: pointer;
   background-color: #71715d;
 }
-.left-part{
+.left-part {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -332,7 +303,7 @@ export default {
   padding: 0 30px;
   border-right: solid 1px #8F8F76;
 }
-.bottom-action{
+.bottom-action {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -340,15 +311,14 @@ export default {
   scale: 0;
   opacity: 0;
 }
-.logotype{
+.logotype {
   width: 80%;
   aspect-ratio: 1;
   object-fit: contain;
   scale: 0;
   opacity: 0;
 }
-
-.model{
+.model {
   scale: 0;
   opacity: 0;
   position: absolute;
@@ -360,21 +330,21 @@ export default {
   clip-path: inset(5px 0 0 0);
 }
 
-@media (max-width: 768px){
-  .curvedText{
+@media (max-width: 768px) {
+  .curvedText {
     width: 300%;
     position: absolute;
     transform: translateX(-30%) translateY(40%);
     bottom: 0;
     opacity: 1;
   }
-  .banner{
+  .banner {
     display: block;
     position: relative;
     height: 100%;
     overflow: hidden;
   }
-  .left-part{
+  .left-part {
     display: flex;
     flex-direction: row-reverse;
     gap: 50px;
@@ -385,28 +355,29 @@ export default {
     padding: 20px 0;
     border-bottom: solid 1px #8F8F76;
   }
-  .logotype{
+  .logotype {
     width: 20%;
     aspect-ratio: 1;
     object-fit: contain;
     scale: 0;
     opacity: 0;
   }
-  .language{
+  .language {
     width: fit-content;
     margin-right: 20px;
+    margin-top: 0;
   }
-  .bottom-action{
+  .bottom-action {
     display: none;
   }
-  .text-header{
+  .text-header {
     position: absolute;
     right: 20px;
     top: 120px;
     width: 500px;
     text-align: end;
   }
-  .text-header h1{
+  .text-header h1 {
     color: #262B2D;
     font-size: 20px;
     font-weight: 500;
@@ -416,18 +387,18 @@ export default {
     scale: 0;
     opacity: 0;
   }
-  .blob{
+  .blob {
     position: absolute;
     left: 90px;
     top: -200px;
     scale: 0.35 !important;
     opacity: 0;
   }
-  .right-part{
+  .right-part {
     height: 500px;
     padding-top: 80px;
   }
-  .model{
+  .model {
     scale: 0;
     opacity: 0;
     position: absolute;
@@ -436,10 +407,10 @@ export default {
     width: 100%;
     left: 0;
   }
-  .scrolldown{
+  .scrolldown {
     display: none;
   }
-  .bottom-action{
+  .bottom-action {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -455,7 +426,7 @@ export default {
     opacity: 0;
     z-index: 1;
   }
-  .buy{
+  .buy {
     background-color: #8F8F76;
     width: 250px;
     height: 46px;
@@ -467,31 +438,27 @@ export default {
     transition: all .2s ease;
     margin-bottom: 24px;
   }
-  .copyright{
+  .copyright {
     color: #262B2D;
     font-size: 16px;
     text-align: center;
     font-weight: 500;
     margin-bottom: 10px;
   }
-  .language{
-    margin-top: 0;
-  }
-  .burger{
+  .burger {
     display: block;
   }
 }
 
-
 @media (min-width: 768px) and (max-width: 1800px) {
-  .copyright{
+  .copyright {
     color: #262B2D;
     font-size: 14px;
     text-align: center;
     font-weight: 500;
     margin-bottom: 10px;
   }
-  .model{
+  .model {
     scale: 0;
     opacity: 0;
     position: absolute;
@@ -500,14 +467,14 @@ export default {
     width: 40vw;
     left: 30%;
   }
-  .blob{
+  .blob {
     position: absolute;
     right: -150px;
     top: -80px;
     scale: .7 !important;
     opacity: 0;
   }
-  .buy{
+  .buy {
     background-color: #8F8F76;
     width: 250px;
     height: 46px;
@@ -519,11 +486,11 @@ export default {
     transition: all .2s ease;
     margin-bottom: 50px;
   }
-  .buy:hover{
+  .buy:hover {
     cursor: pointer;
     background-color: #71715d;
   }
-  .text-header h1{
+  .text-header h1 {
     color: #262B2D;
     font-size: 35px;
     font-weight: 500;
