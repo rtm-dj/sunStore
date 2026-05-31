@@ -44,6 +44,7 @@ export default {
     font-size: 14px;
     font-family: 'Montserrat Alternates';
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .sectionActive{
